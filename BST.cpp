@@ -1,10 +1,11 @@
 #include <iostream>
 #include "BST.h"
 
-TreeNodePtr BST::create(int item,TreeNodePtr left,TreeNodePtr right){
+TreeNodePtr BST::create(int item,string n,TreeNodePtr left,TreeNodePtr right){
     TreeNodePtr newNode = new TreeNode(item);
         newNode->left = left;
         newNode->right = right;
+        newNode->name = n;
         return newNode;
 }
 

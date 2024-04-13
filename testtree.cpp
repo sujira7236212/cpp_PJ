@@ -25,12 +25,12 @@ public:
 
     // Function to insert a node in the binary tree
     // Function to create a node with left and right children
-    // TreeNode* createNode(int value, TreeNode* left, TreeNode* right) {
-    //     TreeNode* newNode = new TreeNode(value);
-    //     newNode->left = left;
-    //     newNode->right = right;
-    //     return newNode;
-    // }
+    TreeNode* createNode(int value, TreeNode* left, TreeNode* right) {
+        TreeNode* newNode = new TreeNode(value);
+        newNode->left = left;
+        newNode->right = right;
+        return newNode;
+    }
 
     // Function to print the children of a node
     void printChildren(int value,TreeNode* p) {
@@ -102,14 +102,14 @@ public:
 };
 
 int main() {
-    //BinaryTree tree;
-    BinaryTree a(1,nullptr,nullptr,"a");
-    BinaryTree b(2,nullptr,nullptr,"b");
-    BinaryTree c(3,nullptr,nullptr,"c");
-    BinaryTree d(5,nullptr,nullptr,"d");
-    TreeNode* 
+    BinaryTree tree;
+    // BinaryTree a(1,nullptr,nullptr,"a");
+    // BinaryTree b(2,nullptr,nullptr,"b");
+    // BinaryTree c(3,nullptr,nullptr,"c");
+    // BinaryTree d(5,nullptr,nullptr,"d");
+   // TreeNode* p; 
     
-    //TreeNode* p = tree.createNode(4, tree.createNode(3, tree.createNode(1,nullptr, nullptr), tree.createNode(2,nullptr, nullptr)), tree.createNode(5, nullptr, nullptr));
+    TreeNode* p = tree.createNode(4, tree.createNode(3, tree.createNode(1,nullptr, nullptr), tree.createNode(2,nullptr, nullptr)), tree.createNode(5, nullptr, nullptr));
     tree.printInorder(p);
     std::cout<<std::endl;
     std::cout << "Children of 4: ";

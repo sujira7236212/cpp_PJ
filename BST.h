@@ -1,4 +1,6 @@
 //Node of element
+#ifndef BST_H
+#define BST_H
 #include <string>
 using namespace std;
 struct TreeNode{
@@ -15,9 +17,10 @@ class BST{
     
         TreeNode* root;
     public:
-        BST();
-        ~BST();
-        TreeNodePtr create(int,TreeNodePtr,TreeNodePtr);
+        // BST();
+        // ~BST();
+        TreeNodePtr create(int,string,TreeNodePtr,TreeNodePtr);
         TreeNodePtr findNode(TreeNodePtr,int);
         TreeNodePtr findparent(TreeNodePtr,int,int);
 };
+#endif
