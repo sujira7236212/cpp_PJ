@@ -38,3 +38,12 @@ TreeNodePtr BST::findparent(TreeNodePtr root, int lvalue, int rvalue){
         return parent;
     
 }
+
+// string BST::returnname(int value) {
+//         TreeNodePtr node = findNode(root, value);
+//         if (node != nullptr) {
+//             return node->name;
+//         } else {
+//             return "null"; // Or throw an exception indicating the node was not found
+//         }
+//     }

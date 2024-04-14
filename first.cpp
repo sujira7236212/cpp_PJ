@@ -6,24 +6,26 @@ class first :public BST{
     private:
     public:
         //first();
-        int build(TreeNodePtr,int,int);
+        int build(int,int);
         TreeNodePtr createNode();
+        string returnname(int);
 
 };
 // first::first(){
 
 // }
+TreeNodePtr t;
 
-TreeNodePtr first::createNode(){
-    TreeNodePtr t;
-    t = create(6,"Wood", create(1,"Metal",nullptr, nullptr),create(5, "Plant",create(2,"Water",nullptr, nullptr),create(3,"Seeds",nullptr, nullptr)));
-    return t;
-}
+// TreeNodePtr first::createNode(){
+    
+//     t = create(6,"Wood", create(1,"Metal",nullptr, nullptr),create(5, "Plant",create(2,"Water",nullptr, nullptr),create(3,"Seeds",nullptr, nullptr)));
+//     return t;
+// }
 
 
-int first::build(TreeNodePtr t,int i,int j){
-    // TreeNodePtr t;
-    // t = create(6,"Wood", create(1,"Metal",nullptr, nullptr),create(5, "Plant",create(2,"Water",nullptr, nullptr),create(3,"Seeds",nullptr, nullptr)));
+int first::build(int i,int j){
+    //TreeNodePtr t;
+    t = create(5,"Wood", create(1,"Metal",nullptr, nullptr),create(6, "Plant",create(2,"Water",nullptr, nullptr),create(3,"Seeds",nullptr, nullptr)));
     if(i==2&&j==3 || i==3&&j==2){
         if((findparent(t,i,j)->data)==5){
             cout<<"You got "<<findparent(t,2,3)->name<<endl; //Plant
@@ -46,7 +48,11 @@ int first::build(TreeNodePtr t,int i,int j){
     //std::cout<<findparent(t,3,5)->data<<" 1"<<endl;
 }
 
-
-
-
-
+string first::returnname(int value) {
+        TreeNodePtr node = findNode(t, value);
+        if (node != nullptr) {
+            return node->name;
+        } else {
+            return "null"; // Or throw an exception indicating the node was not found
+        }
+    }

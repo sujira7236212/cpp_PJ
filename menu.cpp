@@ -5,14 +5,17 @@ using namespace std;
 
 class menu :public first{
     private:
-    string array[20];
+    string  array[20];
 
     public:
     void menu1();
     void menu2();
-    void loopmenu(TreeNodePtr);
-    void addmenu(int,TreeNodePtr);
+    int loopmenu1();
+    int loopmenu2();
+    void addmenu(int);
+    string array2[20] ={"", "Metal", "Water", "Seeds", "Glass", "Plant", "Wood"};
 };
+
  
  void menu::menu1(){
 	//int select1;
@@ -51,32 +54,34 @@ void menu::menu2(){
 			cout<<array[k]<<endl;
             
 		}
+        //cout<<array[5]<<endl;
 	}
 	// cout<<"You choose: "<<endl;
 	// cin>>select2;
 	// return select2;
 }
 
-void menu::addmenu(int add,TreeNodePtr t){
+void menu::addmenu(int add){
     int r;
-    string name;
-    name = findNode(t,add)->name;
-    array[add] = name;
+    //string name;
+    //name = findNode(t,add)->name;
+    array[add] = array2[add];
+    //cout<<"call + "<<returnname(add)<<endl;
 
 }
 
-void menu::loopmenu(TreeNodePtr t){
+int menu::loopmenu1(){
     int select1;
-    int select2;
-    for(int i=0;i<4;i++){
         menu1();
         cout<<"You choose: "<<endl;
 	    cin>>select1;
-        menu2(); 
+        return select1;
+}
+
+int menu::loopmenu2(){
+    int select2;
+        menu2();
         cout<<"You choose: "<<endl;
-	    cin>>select2; 
-        int add = build(t,select1,select2);
-        addmenu(add );
-    }
-    
+	    cin>>select2;
+        return select2;
 }

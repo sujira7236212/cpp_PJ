@@ -6,12 +6,18 @@
 using namespace std;
 
 int main(){
-	TreeNodePtr t;
+	
 	menu a;
 	first b;
-	
-	// int i = menu1();
-	// int j = menu2();
-	a.loopmenu(b.createNode());
+	int i,s1,s2;
+	while(1){
+		s1 = a.loopmenu1();
+		s2 = a.loopmenu2();
+		int add = a.build(s1,s2);
+		cout<<add<<endl;
+		//TreeNodePtr tmp = b.findNode(tmp,add);
+		a.addmenu(add);
+	}
+
 	return 0;
 }
