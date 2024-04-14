@@ -25,24 +25,27 @@ TreeNodePtr t;
 
 int first::build(int i,int j){
     //TreeNodePtr t;
-    t = create(5,"Wood", create(1,"Metal",nullptr, nullptr),create(6, "Plant",create(2,"Water",nullptr, nullptr),create(3,"Seeds",nullptr, nullptr)));
-    if(i==2&&j==3 || i==3&&j==2){
-        if((findparent(t,i,j)->data)==5){
-            cout<<"You got "<<findparent(t,2,3)->name<<endl; //Plant
-            return findparent(t,2,3)->data;
-        }
+    t = create(5,"Wood", create(1,"Metal",nullptr, nullptr),(create(6, "Plant",create(2,"Water",nullptr, nullptr),create(3,"Seeds",nullptr, nullptr))));
+    //cout<<"Hi"<<endl;
+   // if(i==2&&j==3 || i==3&&j==2){
+        //cout<<""
+        //if((findparent(t,i,j)->data)==5){
+            //cout<<"You got "<<findparent(t,2,3)->name<<endl; //Plant
+            cout<<"You got "<<findparent(t,i,j)->name<<endl;
+            return findparent(t,i,j)->data;
+        //}
         //addmenu("Plant");
-    }
-    else if(i==1&&j==5 || i==5&&j==1){
-        if((findparent(t,i,j)->data)==6){
-            cout<<"You got "<<findparent(t,1,5)->name<<endl; //Wood
-            return findparent(t,1,5)->data;
-    }
-    }
-    else {
-        cout<<"Nothing happen"<<endl;
-        return 0;
-    }
+   // }
+    // else if(i==1&&j==5 || i==5&&j==1){
+    //     if((findparent(t,i,j)->data)==6){
+    //         cout<<"You got "<<findparent(t,1,5)->name<<endl; //Wood
+    //         return findparent(t,1,5)->data;
+    // }
+    // }
+    // else {
+    //     cout<<"Nothing happen"<<endl;
+    //     return 0;
+    // }
     
 
     //std::cout<<findparent(t,3,5)->data<<" 1"<<endl;

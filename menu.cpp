@@ -13,7 +13,7 @@ class menu :public first{
     int loopmenu1();
     int loopmenu2();
     void addmenu(int);
-    string array2[20] ={"", "Metal", "Water", "Seeds", "Glass", "Plant", "Wood"};
+    string array2[20] ={"", "Metal", "Water", "Seeds", "Glass", "Wood","Plant" };
 };
 
  
