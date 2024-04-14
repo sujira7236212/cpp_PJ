@@ -63,10 +63,9 @@ void menu::menu2(){
 
 void menu::addmenu(int add){
     int r;
-    //string name;
-    //name = findNode(t,add)->name;
-    array[add] = array2[add];
-    //cout<<"call + "<<returnname(add)<<endl;
+    // array[add] = array2[add];
+    array[add] = returnname(add);
+    
 
 }
 
