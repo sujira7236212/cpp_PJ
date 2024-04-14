@@ -9,16 +9,23 @@ TreeNodePtr BST::create(int item,string n,TreeNodePtr left,TreeNodePtr right){
         return newNode;
 }
 
-TreeNodePtr BST::findNode(TreeNodePtr node, int value){
-    if (node == NULL || node->data == value) {
-            return node;
-        }
+TreeNodePtr BST::findNode(TreeNodePtr root, int value){
+    
+    TreeNodePtr parent = NULL;
+    TreeNodePtr current = root;
 
-        if (value < node->data) {
-            return findNode(node->left, value);
+    while (current != NULL && current->data != value) {
+        
+        parent = current;
+        if (value < current->data) {
+            current = current->left;
         } else {
-            return findNode(node->right, value);
+            current = current->right;
         }
+        
+    }
+    //cout<<"current "<<current->data<<endl;
+    return parent;
 }
 
 TreeNodePtr BST::findparent(TreeNodePtr root, int lvalue, int rvalue){

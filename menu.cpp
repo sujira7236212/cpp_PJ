@@ -13,7 +13,7 @@ class menu :public first{
     int loopmenu1();
     int loopmenu2();
     void addmenu(int);
-    string array2[20] ={"", "Metal", "Water", "Seeds", "Glass", "Wood","Plant" };
+    string array2[20] ={"", "Metal", "Wood", "Water", "Plant","Seeds" ,"Glass"};
 };
 
  
@@ -23,9 +23,10 @@ class menu :public first{
 	int k;
 	//string array[20];
 	array[1]="Metal";
-	array[2]="Water";
-	array[3]="Seeds";
-	array[4]="Glass";
+	// array[2]=" ";
+	array[3]="Water";
+	// array[4]=" ";
+    array[5] = "seeds";
 	for(k=1;k<20;k++){
 		if(!array[k].empty()){
 			cout<<k<<".";
@@ -45,9 +46,11 @@ void menu::menu2(){
 	int k;
 	//string array[20];
 	array[1]="Metal";
-	array[2]="Water";
-	array[3]="Seeds";
-	array[4]="Glass";
+	// array[2]=" ";
+	array[3]="Water";
+	// array[4]=" ";
+    array[5] = "seeds";
+
 	for(k=1;k<20;k++){
 		if(!array[k].empty()){
 			cout<<k<<".";
@@ -65,6 +68,7 @@ void menu::addmenu(int add){
     int r;
     // array[add] = array2[add];
     array[add] = returnname(add);
+    cout<<returnname(add)<<endl;
     
 
 }
