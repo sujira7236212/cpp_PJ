@@ -29,7 +29,7 @@ int first::build(int i,int j){
             // cout<<"You got "<<findparent(t,i,j)->name<<endl;
             // return findparent(t,i,j)->data;
             if((findNode(t,i)->data )== (findNode(t,j)->data)){
-                cout<<"found "<<findNode(t,i)->data<<endl;
+                cout<<"found "<<findNode(t,i)->data<<endl; 
                 return findNode(t,i)->data;
             }
             else{
@@ -39,11 +39,7 @@ int first::build(int i,int j){
 
 }
 
-string first::returnname(int value) {
-        TreeNodePtr node = findNode(t, value);
-        if (node != nullptr) {
-            return node->name;
-        } else {
-            return "null"; 
-        }
+string first::returnname(int add) {
+        string n = findNodeName(t,add);
+        return n;
     }

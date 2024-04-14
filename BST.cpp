@@ -28,6 +28,27 @@ TreeNodePtr BST::findNode(TreeNodePtr root, int value){
     return parent;
 }
 
+string BST::findNodeName(TreeNodePtr root, int value){
+    
+    TreeNodePtr parent = NULL;
+    TreeNodePtr current = root;
+
+    while (current != NULL && current->data != value) {
+        
+        parent = current;
+        if (value < current->data) {
+            current = current->left;
+        } else {
+            current = current->right;
+        }
+        
+    }
+    //cout<<"current "<<current->data<<endl;
+    return current->name;
+    //cout<<"current "<<current->data<<endl;
+    
+}
+
 TreeNodePtr BST::findparent(TreeNodePtr root, int lvalue, int rvalue){
     if (root == NULL) {
             return NULL;
