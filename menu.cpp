@@ -47,13 +47,13 @@ void menu::addmenu(int add){
     }
 	else{
 		array[add] = returnname(add);
-    cout<<returnname(add)<<endl;
 	}
 }
 
 
 int menu::loopmenu1(){
     int select1;
+		cout<<"Point: "<<return_point()<<endl<<endl;
         menu1();
         cout<<"You choose: "<<endl;
 	    cin>>select1;
@@ -62,6 +62,7 @@ int menu::loopmenu1(){
 
 int menu::loopmenu2(){
     int select2;
+	cout<<"Point: "<<return_point()<<endl<<endl;
         menu2();
         cout<<"You choose: "<<endl;
 	    cin>>select2;

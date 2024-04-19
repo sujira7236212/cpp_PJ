@@ -5,7 +5,6 @@
 using namespace std;
 struct TreeNode{
         int data;
-        int point;
         string name;
         TreeNode* left;
         TreeNode* right;
@@ -14,18 +13,18 @@ struct TreeNode{
 typedef TreeNode* TreeNodePtr;
 class BST{
     private:
+        int point;
         TreeNodePtr root = NULL;
     public:
         BST();
         ~BST();
         TreeNodePtr newNode(int item,string);
-        TreeNodePtr create(int,string,TreeNodePtr,TreeNodePtr);
         TreeNodePtr findNode(TreeNodePtr,int);
-        TreeNodePtr findparent(TreeNodePtr,int,int);
         string findNodeName(TreeNodePtr,int);
         TreeNodePtr insert(TreeNodePtr ,int ,string );
         int check(int ,int );
         string returnname(int);
+        int return_point();
         //string returnname(int);
 
 };

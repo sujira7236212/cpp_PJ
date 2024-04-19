@@ -1,7 +1,6 @@
 #include <iostream>
 #include "BST.h"
 
-
 TreeNodePtr BST::newNode(int item,string n)
 {
     TreeNodePtr temp
@@ -53,11 +52,13 @@ BST::~BST(){
 int BST::check(int i,int j){
     t = root;
             if((findNode(t,i)->data )== (findNode(t,j)->data)){
-                cout<<"found "<<findNode(t,i)->data<<endl; 
+                cout<<"found "<<findNode(t,i)->data<<endl;
+                point += 20;
                 return findNode(t,i)->data;
             }
             else{
                 cout<<"Nothing Happen"<<endl;
+                point -= 10;
                 return 0;
             }
 }
@@ -83,7 +84,6 @@ TreeNodePtr BST::findNode(TreeNodePtr root, int value){
         }
         
     }
-    //cout<<"current "<<current->data<<endl;
     return parent;
 }
 
@@ -104,21 +104,7 @@ string BST::findNodeName(TreeNodePtr root, int value){
     return current->name;   
 }
 
-TreeNodePtr BST::findparent(TreeNodePtr root, int lvalue, int rvalue){
-    if (root == NULL) {
-            return NULL;
-        }
-
-    if ((root->left && (root->left->data == lvalue || root->left->data == rvalue)) || 
-        (root->right && (root->right->data == lvalue || root->right->data == rvalue))) {            
-            return root;
-        }
-
-    TreeNodePtr parent = findparent(root->left, lvalue, rvalue);
-    if (parent == nullptr) { 
-            parent = findparent(root->right, lvalue, rvalue);
-        }
-        return parent;
-    
+int BST::return_point(){
+    return point;
 }
 
