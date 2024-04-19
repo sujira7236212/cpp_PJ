@@ -1,11 +1,11 @@
 #ifndef MENU_H
 #define MENU_H
 
-#include "first.h"
+#include "BST.h"
 //#include "menu.cpp"
 #include <string>
 using namespace std;
-class menu :public first{
+class menu :public BST{
     private:
     string  array[20];
 
