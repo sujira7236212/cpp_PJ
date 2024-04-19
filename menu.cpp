@@ -16,24 +16,31 @@ using namespace std;
 //     void addmenu(int);
 //     string array2[20] ={"", "Metal", "Wood", "Water", "Plant","Seeds" ,"Glass"};
 // };
+menu::menu(){
+	array[1]="Metal";
+	array[3]="Water";
+    array[5] = "seeds";
+}
 
+menu::~menu(){
+	
+}
  
  void menu::menu1(){
 	//int select1;
 	cout<<"Please choose first element"<<endl;
 	int k;
-	//string array[20];
-	array[1]="Metal";
-	// array[2]=" ";
-	array[3]="Water";
-	// array[4]=" ";
-    array[5] = "seeds";
+	// //string array[20];
+	// array[1]="Metal";
+	// // array[2]=" ";
+	// array[3]="Water";
+	// // array[4]=" ";
+    // array[5] = "seeds";
 	for(k=1;k<20;k++){
 		if(!array[k].empty()){
 			cout<<k<<".";
 			cout<<array[k]<<endl;
 		}
-		
 	}
 	// cout<<"You choose: "<<endl;
 	// cin>>select1;
@@ -45,12 +52,12 @@ void menu::menu2(){
 	//int select2;
 	cout<<"Please choose second element"<<endl;
 	int k;
-	//string array[20];
-	array[1]="Metal";
-	// array[2]=" ";
-	array[3]="Water";
-	// array[4]=" ";
-    array[5] = "seeds";
+	// //string array[20];
+	// array[1]="Metal";
+	// // array[2]=" ";
+	// array[3]="Water";
+	// // array[4]=" ";
+    // array[5] = "seeds";
 
 	for(k=1;k<20;k++){
 		if(!array[k].empty()){

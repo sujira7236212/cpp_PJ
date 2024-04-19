@@ -10,6 +10,8 @@ class menu :public first{
     string  array[20];
 
     public:
+    menu();
+    ~menu();
     void menu1();
     void menu2();
     int loopmenu1();
