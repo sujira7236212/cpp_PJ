@@ -15,7 +15,7 @@ using namespace std;
 // first::first(){
 
 // }
-TreeNodePtr t;
+//TreeNodePtr t;
 
 // TreeNodePtr first::createNode(){
     

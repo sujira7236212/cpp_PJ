@@ -14,10 +14,11 @@ struct TreeNode{
 typedef TreeNode* TreeNodePtr;
 class BST{
     private:
-        TreeNodePtr root;
+        TreeNodePtr root = NULL;
     public:
         BST();
-        // ~BST();
+        ~BST();
+        TreeNodePtr newNode(int item,string);
         TreeNodePtr create(int,string,TreeNodePtr,TreeNodePtr);
         TreeNodePtr findNode(TreeNodePtr,int);
         TreeNodePtr findparent(TreeNodePtr,int,int);

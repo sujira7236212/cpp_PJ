@@ -1,15 +1,20 @@
 #include <iostream>
 #include "BST.h"
 
-TreeNodePtr BST::create(int item,string n,TreeNodePtr left,TreeNodePtr right){
-    TreeNodePtr newNode = new TreeNode(item);
-        newNode->left = left;
-        newNode->right = right;
-        newNode->name = n;
-        return newNode;
+
+TreeNodePtr BST::newNode(int item,string n)
+{
+    TreeNodePtr temp
+        = new TreeNode(item);
+    temp->name = n;
+    temp->data = item;
+    temp->left = temp->right = NULL;
+    return temp;
 }
 
 TreeNodePtr BST:: insert(TreeNodePtr tmp,int item,string n){
+    if (tmp == NULL)
+        return newNode(item,n);
     if (item < tmp->data)
         tmp->left = insert(tmp->left, item,n);
     else if (item > tmp->data)
@@ -17,10 +22,13 @@ TreeNodePtr BST:: insert(TreeNodePtr tmp,int item,string n){
     return tmp;
 }
 
+TreeNodePtr t;
 
 BST::BST() {
-    cout<<"HI";
+    //cout<<"HI";
+
     //root = create(2,"Wood", create(1,"Metal",nullptr, nullptr),(create(4, "Plant",create(3,"Water",nullptr, nullptr),create(5,"Seeds",nullptr, nullptr))));
+    t = root;
     root = insert(root,8,"city");
     insert(root,4,"Eco System");
     insert(root,12,"Village");
@@ -38,8 +46,12 @@ BST::BST() {
     insert(root,15,"Female");
 }
 
+BST::~BST(){
+    cout<<"Bye"<<endl;
+}
+
 int BST::check(int i,int j){
-    TreeNodePtr t = root;
+    t = root;
             if((findNode(t,i)->data )== (findNode(t,j)->data)){
                 cout<<"found "<<findNode(t,i)->data<<endl; 
                 return findNode(t,i)->data;
@@ -51,12 +63,13 @@ int BST::check(int i,int j){
 }
 
 string BST::returnname(int add) {
-    TreeNodePtr t = root; 
-    return findNodeName(t, add);
+    t =root;
+    // return findNodeName(t, add);
+        string n = findNodeName(t,add);
+        return n;
 }
 
 TreeNodePtr BST::findNode(TreeNodePtr root, int value){
-    
     TreeNodePtr parent = NULL;
     TreeNodePtr current = root;
 
@@ -87,12 +100,8 @@ string BST::findNodeName(TreeNodePtr root, int value){
         } else {
             current = current->right;
         }
-        
     }
-    //cout<<"current "<<current->data<<endl;
-    return current->name;
-    //cout<<"current "<<current->data<<endl;
-    
+    return current->name;   
 }
 
 TreeNodePtr BST::findparent(TreeNodePtr root, int lvalue, int rvalue){

@@ -2,11 +2,15 @@
 #include <iostream>
 #include "menu.h"
 using namespace std;
-BST test;
 menu::menu(){
-	array[1]="Metal";
-	array[3]="Water";
-    array[5] = "seeds";
+	array[1]="Water";
+	array[3]="Land";
+    array[5]="Trees";
+	array[7]="Animals";
+	array[9]="Woods";
+    array[11]= "Metal";
+	array[13]="Male";
+	array[15]="Female";
 }
 
 menu::~menu(){
@@ -38,9 +42,15 @@ void menu::menu2(){
 void menu::addmenu(int add){
     int r;
     // array[add] = array2[add];
-    array[add] = returnname(add);
+	if(add==0){
+        array[0] = "Nothing Happen";
+    }
+	else{
+		array[add] = returnname(add);
     cout<<returnname(add)<<endl;
+	}
 }
+
 
 int menu::loopmenu1(){
     int select1;
