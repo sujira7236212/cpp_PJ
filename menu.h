@@ -2,6 +2,7 @@
 #define MENU_H
 
 #include "first.h"
+//#include "menu.cpp"
 #include <string>
 using namespace std;
 class menu :public first{
@@ -13,7 +14,8 @@ class menu :public first{
     void menu2();
     int loopmenu1();
     int loopmenu2();
-    void addmenu(int,string);
+    void addmenu(int);
+    string array2[20] ={"", "Metal", "Wood", "Water", "Plant","Seeds" ,"Glass"};
 };
 
 #endif

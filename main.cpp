@@ -2,7 +2,12 @@
 //#include "BST.h"
 //#include "first.cpp"
 #include <string>
+#include "menu.h"
+#include "first.h"
+#include "BST.h"
 #include "menu.cpp"
+#include "first.cpp"
+#include "BST.cpp"
 using namespace std;
 
 int main(){

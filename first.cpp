@@ -1,16 +1,17 @@
 #include <iostream>
-#include "BST.cpp"
+//#include "BST.cpp"
+#include "first.h"
 #include <string>
 using namespace std;
-class first :public BST{
-    private:
-    public:
-        //first();
-        int build(int,int);
-        TreeNodePtr createNode();
-        string returnname(int);
+// class first :public BST{
+//     private:
+//     public:
+//         //first();
+//         int build(int,int);
+//         TreeNodePtr createNode();
+//         string returnname(int);
 
-};
+// };
 // first::first(){
 
 // }
