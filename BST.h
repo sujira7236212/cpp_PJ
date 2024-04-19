@@ -27,6 +27,8 @@ class BST{
         string returnname(int);
         int return_hp();
         int return_point();
+        void update_point(int);
+        void damage();
         //string returnname(int);
 
 };

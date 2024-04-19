@@ -4,6 +4,10 @@
 #include "BST.h"
 #include "menu.cpp"
 #include "BST.cpp"
+#include "challenge.h"
+#include "challenge.cpp"
+#include "disaster.h"
+#include "disaster.cpp"
 using namespace std;
 
 int main() {

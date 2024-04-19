@@ -46,7 +46,7 @@ BST::BST() {
 }
 
 BST::~BST(){
-    cout<<"Bye"<<endl;
+    cout<<"You win"<<endl;
 }
 
 int BST::check(int i,int j){
@@ -62,6 +62,8 @@ int BST::check(int i,int j){
                 return 0;
             }
 }
+
+
 
 string BST::returnname(int add) {
     t =root;
@@ -112,3 +114,10 @@ int BST::return_hp(){
     return hp;
 }
 
+void BST::update_point(int x){
+    point += x;
+}
+
+void BST::damage(){
+    hp--;
+}

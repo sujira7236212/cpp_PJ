@@ -1,6 +1,7 @@
 #include <string>
 #include <iostream>
 #include "menu.h"
+#include "disaster.h"
 using namespace std;
 menu::menu(){
 	array[1]="Water";
@@ -59,6 +60,20 @@ int menu::return_flag(){
 
 int menu::loopmenu1(){
     int select1;
+		if(return_point()>30){
+			disaster fire;
+			if(fire.random()){
+				fire.randomquiz();
+				if(fire.returnans()){
+					update_point(100);
+				}
+				else{
+					update_point(-50);
+					damage();
+				}
+
+			}
+		}
 		cout<<"Point: "<<return_point()<<endl<<endl;
         menu1();
         cout<<"You choose: "<<endl;
@@ -68,7 +83,8 @@ int menu::loopmenu1(){
 
 int menu::loopmenu2(){
     int select2;
-	cout<<"Point: "<<return_point()<<endl<<endl;
+
+		cout<<"Point: "<<return_point()<<endl<<endl;
         menu2();
         cout<<"You choose: "<<endl;
 	    cin>>select2;
