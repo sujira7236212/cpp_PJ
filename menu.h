@@ -8,6 +8,7 @@ using namespace std;
 class menu :public BST{
     private:
     string  array[20];
+    int flag = 8;
 
     public:
     menu();
@@ -17,6 +18,7 @@ class menu :public BST{
     int loopmenu1();
     int loopmenu2();
     void addmenu(int);
+    int return_flag();
     string array2[20] ={"", "Metal", "Wood", "Water", "Plant","Seeds" ,"Glass"};
 };
 

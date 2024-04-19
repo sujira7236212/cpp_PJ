@@ -47,7 +47,13 @@ void menu::addmenu(int add){
     }
 	else{
 		array[add] = returnname(add);
+		flag++;
 	}
+	
+}
+
+int menu::return_flag(){
+	return flag;
 }
 
 

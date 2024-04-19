@@ -108,3 +108,7 @@ int BST::return_point(){
     return point;
 }
 
+int BST::return_hp(){
+    return hp;
+}
+

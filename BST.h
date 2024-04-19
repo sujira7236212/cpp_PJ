@@ -14,6 +14,7 @@ typedef TreeNode* TreeNodePtr;
 class BST{
     private:
         int point;
+        int hp = 3;
         TreeNodePtr root = NULL;
     public:
         BST();
@@ -24,6 +25,7 @@ class BST{
         TreeNodePtr insert(TreeNodePtr ,int ,string );
         int check(int ,int );
         string returnname(int);
+        int return_hp();
         int return_point();
         //string returnname(int);
 

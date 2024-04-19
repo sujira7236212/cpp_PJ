@@ -9,7 +9,7 @@ using namespace std;
 int main() {
     menu a; 
     int s1, s2;
-    while (true) {
+    while (a.return_flag()<15){
         s1 = a.loopmenu1();
         s2 = a.loopmenu2();
         int result = a.check(s1, s2);
