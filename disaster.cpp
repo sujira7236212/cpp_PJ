@@ -11,12 +11,13 @@ bool disaster::quiz1(){
     cin>>input;
     if(input=='a'){
         ans = true;
-        return ans;
+        //return ans;
     }
     else if(input=='b'){
         ans = false;
-        return ans;
+        
     }
+    return ans;
 }
 
 bool disaster::quiz2(){
@@ -28,12 +29,13 @@ bool disaster::quiz2(){
     cin>>input;
     if(input=='a'){
         ans = true;
-        return ans;
+        //return ans;
     }
     else if(input=='b'){
         ans = false;
-        return ans;
+        
     }
+    return ans;
 }
 
 void disaster::randomquiz(){

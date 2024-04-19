@@ -60,7 +60,7 @@ int menu::return_flag(){
 
 int menu::loopmenu1(){
     int select1;
-		if(return_point()>30){
+		if(!array[6].empty()){
 			disaster fire;
 			if(fire.random()){
 				fire.randomquiz();
