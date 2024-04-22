@@ -120,3 +120,4 @@ void BST::update_point(int x){
 void BST::damage(){
     hp--;
 }
+
