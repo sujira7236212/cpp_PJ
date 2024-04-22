@@ -2,10 +2,11 @@
 #define MENU_H
 
 #include "BST.h"
+#include "node.h"
 //#include "menu.cpp"
 #include <string>
 using namespace std;
-class menu :public BST{
+class menu :public BST, public DoublyLinkedList{
     private:
     string  array[20];
     int flag = 8;
@@ -13,13 +14,11 @@ class menu :public BST{
     public:
     menu();
     ~menu();
-    void menu1();
-    void menu2();
-    int loopmenu1();
-    int loopmenu2();
-    void addmenu(int);
+    void newele(int);
+    void menu1(int,int,DoublyLinkedList &);
+    int loopmenu1(int,int,DoublyLinkedList &);
+    void addmenu(int,DoublyLinkedList &);
     int return_flag();
-    string array2[20] ={"", "Metal", "Wood", "Water", "Plant","Seeds" ,"Glass"};
 };
 
 #endif

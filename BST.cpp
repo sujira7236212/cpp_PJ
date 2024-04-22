@@ -28,8 +28,8 @@ BST::BST() {
 
     //root = create(2,"Wood", create(1,"Metal",nullptr, nullptr),(create(4, "Plant",create(3,"Water",nullptr, nullptr),create(5,"Seeds",nullptr, nullptr))));
     t = root;
-    root = insert(root,8,"city");
-    insert(root,4,"Eco System");
+    root = insert(root,8,"City");
+    insert(root,4,"Ecosystem");
     insert(root,12,"Village");
     insert(root,2,"River");
     insert(root,6,"Forest");
@@ -66,7 +66,7 @@ int BST::check(int i,int j){
 
 
 string BST::returnname(int add) {
-    t =root;
+    t = root;
     // return findNodeName(t, add);
         string n = findNodeName(t,add);
         return n;
