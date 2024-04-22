@@ -46,7 +46,7 @@ BST::BST() {
 }
 
 BST::~BST(){
-    cout<<"You win"<<endl;
+    
 }
 
 int BST::check(int i,int j){

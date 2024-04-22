@@ -2,15 +2,10 @@
 #include <string>
 #include "challenge.h"
 
-void challenge:: description(){
-    cout<<"Lorem ipsum"<<endl;
-}
-
-bool challenge:: random(){
+bool challenge:: random( int n){
     srand(time(NULL));
-    if (rand() % 2 == 0) {
+    if (rand() % n == 0) {
         occured = true;
-        
     }
     return occured;
 }

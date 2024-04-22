@@ -4,7 +4,7 @@
 #include <cctype>
 #include <algorithm>
 #include "menu.h"
-#include "disaster.h"
+
 using namespace std;
 menu::menu(){
 	array[1]="Water";
@@ -15,7 +15,7 @@ menu::menu(){
     array[11]="Metal";
 	array[13]="Male";
 	array[15]="Female";
-	for(int i=2 ; i<15 ; i+=2){
+	for(int i=2 ; i<15 ; i+=2){ //blank options
 		array[i] = " ";
 	}
 }
@@ -32,11 +32,11 @@ void menu::mainmenu(){
 }
 
  void menu::gamemenu(int i, int result, DoublyLinkedList &L){
-	i==1 ? cout<<"\033[34m"<<"  Choose your 1st Element"<<"\033[0m"<<endl : cout<<"\033[36m"<<"  Please choose second element"<<"\033[0m"<<endl;
+	i==1 ? cout<<"\033[34m"<<"  Choose your 1st Element"<<"\033[0m"<<endl : cout<<"\033[36m"<<"  Please choose 2nd element"<<"\033[0m"<<endl;
 	cout<<"            ------------------------------------------"<<endl;
 	cout<<"   \033[4mSpecial\033[0m | ";
 	for(int k=0; k<3; k++){
-		cout<<"\033[1;33m"<<setfill(' ')<<setw(12)<<special[k]<<"\033[0m |"; //dont forgor change
+		cout<<"\033[1;33m"<<setfill(' ')<<setw(12)<<hidden[k]<<"\033[0m |"; //dont forgor change
 	}
 	cout<<endl<<"            ------------------------------------------";
 	cout<<endl<<"  -------------------------------------------------------";
@@ -65,6 +65,19 @@ void menu::addmenu(int add, DoublyLinkedList &L){
 		array[add] = returnname(add);
 		L.insert(array[add]);
 		flag++;
+	}
+	
+}
+
+void menu::addHidden(int add, DoublyLinkedList &L){
+    int r;
+	
+	if(add==0){
+        hidden[0] = "Nothing Happen";
+    }
+	else{
+		hidden[1] = explore.specialElem(1);
+		L.insert(hidden[1]);
 	}
 	
 }
@@ -110,4 +123,13 @@ int menu::loopmenu(int k, int result, DoublyLinkedList &L){
     }
     if(!found) cout << select1 << " not found. Try again." << endl;
 	} 
+}
+
+void menu::exploreMenu(){
+	string choice;
+	explore.description();
+	cout<<"Choose an Element: ";
+	cin>>choice;
+	transform(choice.begin(), choice.end(), choice.begin(), ::toupper);
+	explore.randomEvent(choice);
 }

@@ -1,5 +1,5 @@
 compile: main.cpp
-	g++ main.cpp -o CC
+	g++ main.cpp challenge/challenge.cpp challenge/disaster.cpp challenge/popQuiz.cpp -o CC
 
 run: CC
 	./CC
