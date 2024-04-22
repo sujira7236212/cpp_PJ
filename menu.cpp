@@ -22,9 +22,24 @@ menu::menu(){
 
 menu::~menu(){}
  
- void menu::mainmenu(int i, int result, DoublyLinkedList &L){
-	i==1 ? cout<<"\033[34m"<<"Choose your 1st Element"<<"\033[0m"<<endl : cout<<"\033[36m"<<"Please choose second element"<<"\033[0m"<<endl;
-	cout<<"  -------------------------------------------------------";
+void menu::mainmenu(){
+	cout<<"========================================================="<<endl<<endl<<endl;
+	cout<<"                  \033[1;37m C L E A N  C R A F T\033[0m"<<endl<<endl<<endl;
+	cout<<"              \" Press any key to to enter \""<<endl<<endl;
+	cout<<"     \033[1;31m⚘   \033[1;33m⚘   \033[1;36m⚘   \033[1;34m⚘                     \033[1;31m⚘   \033[1;33m⚘   \033[1;36m⚘   \033[1;34m⚘\033[0m"<<endl;
+	cout<<"========================================================="<<endl<<endl;
+	cin.get();
+}
+
+ void menu::gamemenu(int i, int result, DoublyLinkedList &L){
+	i==1 ? cout<<"\033[34m"<<"  Choose your 1st Element"<<"\033[0m"<<endl : cout<<"\033[36m"<<"  Please choose second element"<<"\033[0m"<<endl;
+	cout<<"            ------------------------------------------"<<endl;
+	cout<<"   \033[4mSpecial\033[0m | ";
+	for(int k=0; k<3; k++){
+		cout<<"\033[1;33m"<<setfill(' ')<<setw(12)<<special[k]<<"\033[0m |"; //dont forgor change
+	}
+	cout<<endl<<"            ------------------------------------------";
+	cout<<endl<<"  -------------------------------------------------------";
 	for(int k=1;k<16;k++){
 		if(k%4==1 || k==1) cout<<endl<<" |  ";
 		if(!array[k].empty()){
@@ -34,7 +49,7 @@ menu::~menu(){}
 	}
 	cout<<"           |  ";
 	cout<<endl<<"  -------------------------------------------------------";
-	cout<<endl<<"Sorted A-Z: ";
+	cout<<endl<<"  Sorted A-Z: ";
 	L.selectionSort();
 	L.print();
 	cout<<"  -------------------------------------------------------"<<endl;
@@ -72,13 +87,13 @@ void menu::newele(int result){
 }
 
 int menu::loopmenu(int k, int result, DoublyLinkedList &L){
-    string select1, temp; ////////////////////////////////////////////
-		cout<<"Point: "<<return_point()<<endl<<endl;
-        mainmenu(k,result,L);
+    string select1, temp; 
+		cout<<"\033[1mPoints : "<<return_point()<<"\033[0m"<<endl<<endl;
+        gamemenu(k,result,L);
 	while(true){
 	k==1 ? cout<<"\033[34m" :  cout<<"\033[36m" ;
-	cout<<"Your selection: ";
-	cin>>select1; /////////////////////////////////	
+	cout<<"  Your selection: ";
+	cin>>select1; 
 	cout<<"\033[0m";
 	transform(select1.begin(), select1.end(), select1.begin(), ::toupper);
 	bool found = false;

@@ -15,6 +15,7 @@ int main() {
     menu a;
     int result = 0;
     int s1, s2, cont;
+    a.mainmenu();
     while (a.return_flag()<16 && result !=8){
         system("clear");
         a.newele(result);

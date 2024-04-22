@@ -8,7 +8,7 @@
 using namespace std;
 class menu :public BST, public DoublyLinkedList{
     private:
-    string  array[16];
+    string  array[16], special[4]={"Solar Panels", "Wind Mill", "Water Mill"}, hidden[4]={" "," "," "};
     int flag = 8;
 
     public:
@@ -16,7 +16,8 @@ class menu :public BST, public DoublyLinkedList{
     ~menu();
     void newele(int);
     void gameexit();
-    void mainmenu(int,int,DoublyLinkedList &);
+    void mainmenu();
+    void gamemenu(int,int,DoublyLinkedList &);
     int loopmenu(int,int,DoublyLinkedList &);
     void addmenu(int,DoublyLinkedList &);
     int return_flag();

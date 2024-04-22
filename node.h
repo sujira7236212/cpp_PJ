@@ -31,7 +31,7 @@ public:
         Node* current = head;
         while (current) {
           cout << current->element << " ";
-          if(i%6==0) cout<<endl<<"            ";
+          if(i%6==0) cout<<endl<<"              ";
           i++;
           current = current->next;
         }
