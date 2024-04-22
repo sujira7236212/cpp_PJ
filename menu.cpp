@@ -22,7 +22,7 @@ menu::menu(){
 
 menu::~menu(){}
  
- void menu::menu1(int i, int result, DoublyLinkedList &L){
+ void menu::mainmenu(int i, int result, DoublyLinkedList &L){
 	i==1 ? cout<<"\033[34m"<<"Choose your 1st Element"<<"\033[0m"<<endl : cout<<"\033[36m"<<"Please choose second element"<<"\033[0m"<<endl;
 	cout<<"  -------------------------------------------------------";
 	for(int k=1;k<16;k++){
@@ -58,14 +58,23 @@ int menu::return_flag(){
 	return flag;
 }
 
+void menu::gameexit(){
+	char choice;
+	cout<<endl<<"  -------------------------------------------------------"<<endl;
+	cout<<endl<<"                         THE END !                       ";
+	cout<<endl<<"                \" Press any key to to exit \""<<endl;
+	cout<<endl<<"  -------------------------------------------------------"<<endl;
+	cin.get();
+}
+
 void menu::newele(int result){
 	if(flag>8) cout<<"Congratulations! You Made "<<"\033[38;5;220m"<<array[result]<<"\033[0m"<<" !\n";
 }
 
-int menu::loopmenu1(int k, int result, DoublyLinkedList &L){
+int menu::loopmenu(int k, int result, DoublyLinkedList &L){
     string select1, temp; ////////////////////////////////////////////
 		cout<<"Point: "<<return_point()<<endl<<endl;
-        menu1(k,result,L);
+        mainmenu(k,result,L);
 	while(true){
 	k==1 ? cout<<"\033[34m" :  cout<<"\033[36m" ;
 	cout<<"Your selection: ";

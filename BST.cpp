@@ -52,7 +52,6 @@ BST::~BST(){
 int BST::check(int i,int j){
     t = root;
             if((findNode(t,i)->data )== (findNode(t,j)->data)){
-                cout<<"found "<<findNode(t,i)->data<<endl;
                 point += 20;
                 return findNode(t,i)->data;
             }
