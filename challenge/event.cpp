@@ -71,22 +71,19 @@ void event::blueprint(int n) {
     }
 }
 
-string event::specialElem(int n){
+string event::specialElem(int n){ //return to add element in menu
     switch(n){
         case 1:
-            return "Wheels";
+            element = "Wheels";
             break;
         case 2:
-            return "Rotor";
+            element = "Rotor";
             break;
         case 3:
-            return "Silicon";
+            element = "Silicon";
             break;
         default:
-            return "Nothing Happened.";
+            element = "Nothing Happened.";
     }
-}
-
-string event::returnElem(){
     return element;
 }

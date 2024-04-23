@@ -13,7 +13,6 @@ class event: public challenge {
         void blueprint();
         void blueprint(int n); //specific blueprint
         string specialElem(int n);
-        string returnElem();
         
 };
 
