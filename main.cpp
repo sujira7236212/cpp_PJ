@@ -19,13 +19,11 @@ int main() {
     a.mainmenu();
     while (a.return_flag()<16 && result !=8){
         system("clear");
-        cout<<"Turn: "<<turn<<endl;
         a.newele(result);
-        s1 = a.loopmenu(1,result,list);
+        s1 = a.loopmenu(1,result,list,turn);
         system("clear");
-        cout<<"Turn: "<<turn<<endl;
         a.newele(result);
-        s2 = a.loopmenu(2,result,list);/////
+        s2 = a.loopmenu(2,result,list,turn);/////
         result = a.check(s1, s2);
         a.addmenu(result,list);
         // a.exploreMenu(); //turn system

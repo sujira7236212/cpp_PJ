@@ -99,9 +99,9 @@ void menu::newele(int result){
 	if(flag>8) cout<<"Congratulations! You Made "<<"\033[38;5;220m"<<array[result]<<"\033[0m"<<" !\n";
 }
 
-int menu::loopmenu(int k, int result, DoublyLinkedList &L){
+int menu::loopmenu(int k, int result, DoublyLinkedList &L,int turn){
     string select1, temp; 
-		cout<<"\033[1mPoints : "<<return_point()<<"\033[0m"<<endl<<endl;
+		cout<<"\033[1mRound : "<<turn<<"\033[0m"<<endl<<endl;
         gamemenu(k,result,L);
 	while(true){
 	k==1 ? cout<<"\033[34m" :  cout<<"\033[36m" ;
@@ -116,7 +116,7 @@ int menu::loopmenu(int k, int result, DoublyLinkedList &L){
         if (temp == select1) {
             found = true;
 			k==1 ? cout<<"\033[34m" :  cout<<"\033[36m" ;
-            cout << "You chose: " << array[i] << endl;
+            cout << "  You chose: " << array[i] << endl;
 			cout<<"\033[0m";
             return i;
         }

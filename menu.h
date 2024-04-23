@@ -22,7 +22,7 @@ class menu :public BST, public DoublyLinkedList{
     void gameexit();
     void mainmenu();
     void gamemenu(int,int,DoublyLinkedList &);
-    int loopmenu(int,int,DoublyLinkedList &);
+    int loopmenu(int,int,DoublyLinkedList &,int);
     void addmenu(int,DoublyLinkedList &);
     void addHidden(int,DoublyLinkedList &);
     void exploreMenu();
