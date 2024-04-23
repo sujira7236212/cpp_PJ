@@ -29,6 +29,7 @@ class BST{
         int return_point();
         void update_point(int);
         void damage();
+        TreeNodePtr search(TreeNodePtr,int);
         //string returnname(int);
 
 };

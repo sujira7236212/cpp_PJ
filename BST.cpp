@@ -51,7 +51,11 @@ BST::~BST(){
 
 int BST::check(int i,int j){
     t = root;
-            if((findNode(t,i)->data )== (findNode(t,j)->data)){
+            if((search(t,i)) == (search(t,j))){
+                cout<<"Nothing Happen"<<endl;
+                return 0;
+            }
+            else if((findNode(t,i)->data )== (findNode(t,j)->data)){
                 point += 20;
                 return findNode(t,i)->data;
             }
@@ -104,6 +108,17 @@ string BST::findNodeName(TreeNodePtr root, int value){
     }
     return current->name;   
 }
+
+TreeNodePtr BST::search(TreeNodePtr root, int value) {
+    if (root == NULL || root->data == value)
+        return root;
+
+    if (root->data < value)
+        return search(root->right, value);
+    
+    return search(root->left, value);
+}
+
 
 int BST::return_point(){
     return point;
