@@ -15,7 +15,6 @@ class menu :public BST, public DoublyLinkedList{
     // clean[4]={"Water Wheel", "Wind Mill", "Solar Panels" }, special[7]={" "," "," "," "};
     int flag = 8; //element count
     event explore;
-    string* clean = explore.clean[4], special = explore.special; 
 
     public:
     menu();
@@ -24,7 +23,7 @@ class menu :public BST, public DoublyLinkedList{
     void gameexit();
     void mainmenu();
     void gamemenu(int,int,DoublyLinkedList &);
-    int loopmenu(int,int,DoublyLinkedList &);
+    int loopmenu(int,int,DoublyLinkedList &,int);
     void addmenu(int,DoublyLinkedList &);
     void addHidden(int,DoublyLinkedList &);
     void exploreMenu();

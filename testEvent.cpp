@@ -13,8 +13,6 @@ using namespace std;
 
 int main(){
     event Test;
-    Test.randomEvent("WATER");
-    string s = Test.specialElem(1);
-    cout<<s<<endl;
+    Test.randomEvent("METAL");
     return 0;
 }

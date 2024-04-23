@@ -33,12 +33,12 @@ void menu::mainmenu(){
 
  void menu::gamemenu(int i, int result, DoublyLinkedList &L){
 	i==1 ? cout<<"\033[34m"<<"  Choose your 1st Element"<<"\033[0m"<<endl : cout<<"\033[36m"<<"  Please choose 2nd element"<<"\033[0m"<<endl;
-	cout<<"            ------------------------------------------"<<endl;
-	cout<<"   \033[4mSpecial\033[0m | ";
-	for(int k=0; k<3; k++){
-		cout<<"\033[1;33m"<<setfill(' ')<<setw(12)<<special[k]<<"\033[0m |"; //dont forgor change
-	}
-	cout<<endl<<"            ------------------------------------------";
+	// cout<<"            ------------------------------------------"<<endl;
+	// cout<<"   \033[4mSpecial\033[0m | ";
+	// for(int k=0; k<3; k++){
+	// 	cout<<"\033[1;33m"<<setfill(' ')<<setw(12)<<special[k]<<"\033[0m |"; //dont forgor change
+	// }
+	// cout<<endl<<"            ------------------------------------------";
 	cout<<endl<<"  -------------------------------------------------------";
 	for(int k=1;k<16;k++){
 		if(k%4==1 || k==1) cout<<endl<<" |  ";
@@ -69,19 +69,6 @@ void menu::addmenu(int add, DoublyLinkedList &L){
 	
 }
 
-void menu::addHidden(int add, DoublyLinkedList &L){
-    int r;
-	
-	if(add==0){
-        hidden[0] = "Nothing Happen";
-    }
-	else{
-		hidden[1] = explore.specialElem(1);
-		L.insert(hidden[1]);
-	}
-	
-}
-
 int menu::return_flag(){
 	return flag;
 }
@@ -99,9 +86,9 @@ void menu::newele(int result){
 	if(flag>8 && result!=0) cout<<"Congratulations! You Made "<<"\033[38;5;220m"<<array[result]<<"\033[0m"<<" !\n";
 }
 
-int menu::loopmenu(int k, int result, DoublyLinkedList &L){
+int menu::loopmenu(int k, int result, DoublyLinkedList &L,int turn){
     string select1, temp; 
-		cout<<"\033[1mPoints : "<<return_point()<<"\033[0m"<<endl<<endl;
+		cout<<"\033[1mRound : "<<turn<<"\033[0m"<<endl<<endl;
         gamemenu(k,result,L);
 	while(true){
 	k==1 ? cout<<"\033[34m" :  cout<<"\033[36m" ;
@@ -116,7 +103,7 @@ int menu::loopmenu(int k, int result, DoublyLinkedList &L){
         if (temp == select1) {
             found = true;
 			k==1 ? cout<<"\033[34m" :  cout<<"\033[36m" ;
-            cout << "You chose: " << array[i] << endl;
+            cout << "  You chose: " << array[i] << endl;
 			cout<<"\033[0m";
             return i;
         }

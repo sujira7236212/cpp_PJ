@@ -1,3 +1,8 @@
+#include <string>
+#include <algorithm>
+#include <cctype>
+#include <iomanip>
+
 #ifndef EVENT_H
 #define EVENT_H
 
@@ -5,7 +10,7 @@ class event: public challenge {
     popQuiz quiz;
     string element_, clean_;
     bool ww=false, wm=false, sp=false; //blueprint acheived
-    string clean[4]={"Water Wheel", "Wind Mill", "Solar Panels" }, // "Water Wheel", "Wind Mill", "Solar Panels"
+    string clean[5]={"Nothing", "Water Wheel", "Wind Mill", "Solar Panels" }, // "Nothing", "Water Wheel", "Wind Mill", "Solar Panels"
     special[4]={" "," "," "}; // "Wheels", "Rotor, "Silicon"
 
     string  hintWW =   " Keep yourself hydrated while driving. ",
@@ -14,15 +19,24 @@ class event: public challenge {
 
     public:
         void cleanDisplay() {
-            for (int i = 0; i < 4; ++i) {
-            cout << clean[i] << endl;
-            }}
+            cout<<"            ------------------------------------------"<<endl;
+	        cout<<"   \033[4mSpecial\033[0m | ";
+	        for(int i = 0; i < 5; ++i){
+		    cout<<"\033[1;33m"<<setfill(' ')<<setw(12)<<special[i]<<"\033[0m |";
+	        }
+	        cout<<endl<<"            ------------------------------------------";
+            }
         void specialDisplay() {
-            for (int i = 0; i < 7; ++i) {
-            cout << special[i] << endl;
-            }}
+            cout<<"            ------------------------------------------"<<endl;
+	        cout<<"   \033[4mSpecial\033[0m | ";
+	        for(int i = 0; i < 7; ++i){
+		    cout<<"\033[1;33m"<<setfill(' ')<<setw(12)<<special[i]<<"\033[0m |";
+	        }
+	        cout<<endl<<"            ------------------------------------------";
+            }
+            
 
-        void event::addClean(int i, string c){ //i for pos
+        void addClean(int i, string c){ //i for pos
             clean[i] = c;}
         void addSpecial(int i, string spe){ //i for pos
             special[i] = spe;}
