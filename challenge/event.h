@@ -10,7 +10,7 @@ class event: public challenge {
     popQuiz quiz;
     string element_, clean_;
     bool ww=false, wm=false, sp=false; //blueprint acheived
-    string clean[5]={"Nothing", "Water Wheel", "Wind Mill", "Solar Panels" }, // "Nothing", "Water Wheel", "Wind Mill", "Solar Panels"
+    string clean[5]={" ", " ", " ", " "}, // "Nothing", "Water Wheel", "Wind Mill", "Solar Panels"
     special[4]={" "," "," "}; // "Wheels", "Rotor, "Silicon"
 
     string  hintWW =   " Keep yourself hydrated while driving. ",
@@ -21,15 +21,15 @@ class event: public challenge {
         void cleanDisplay() {
             cout<<"            ------------------------------------------"<<endl;
 	        cout<<"   \033[4mSpecial\033[0m | ";
-	        for(int i = 0; i < 5; ++i){
-		    cout<<"\033[1;33m"<<setfill(' ')<<setw(12)<<special[i]<<"\033[0m |";
+	        for(int i = 1; i < 4; i++){
+		    cout<<"\033[1;33m"<<setfill(' ')<<setw(12)<<clean[i]<<"\033[0m |";
 	        }
 	        cout<<endl<<"            ------------------------------------------";
             }
         void specialDisplay() {
             cout<<"            ------------------------------------------"<<endl;
 	        cout<<"   \033[4mSpecial\033[0m | ";
-	        for(int i = 0; i < 7; ++i){
+	        for(int i = 0; i < 3; i++){
 		    cout<<"\033[1;33m"<<setfill(' ')<<setw(12)<<special[i]<<"\033[0m |";
 	        }
 	        cout<<endl<<"            ------------------------------------------";

@@ -39,6 +39,7 @@ void menu::mainmenu(){
 	// 	cout<<"\033[1;33m"<<setfill(' ')<<setw(12)<<special[k]<<"\033[0m |"; //dont forgor change
 	// }
 	// cout<<endl<<"            ------------------------------------------";
+	explore.specialDisplay();
 	cout<<endl<<"  -------------------------------------------------------";
 	for(int k=1;k<16;k++){
 		if(k%4==1 || k==1) cout<<endl<<" |  ";
@@ -53,6 +54,7 @@ void menu::mainmenu(){
 	L.selectionSort();
 	L.print();
 	cout<<"  -------------------------------------------------------"<<endl;
+	explore.cleanDisplay();
 }
 
 void menu::addmenu(int add, DoublyLinkedList &L){
@@ -92,7 +94,7 @@ int menu::loopmenu(int k, int result, DoublyLinkedList &L,int turn){
         gamemenu(k,result,L);
 	while(true){
 	k==1 ? cout<<"\033[34m" :  cout<<"\033[36m" ;
-	cout<<"  Your selection: ";
+	cout<<endl<<"  Your selection: ";
 	cin>>select1; 
 	cout<<"\033[0m";
 	transform(select1.begin(), select1.end(), select1.begin(), ::toupper);
@@ -115,8 +117,9 @@ int menu::loopmenu(int k, int result, DoublyLinkedList &L,int turn){
 void menu::exploreMenu(){
 	string choice;
 	explore.description();
-	cout<<"Choose an Element: ";
+	cout<<"Choose an Element as your company: ";
 	cin>>choice;
 	transform(choice.begin(), choice.end(), choice.begin(), ::toupper);
 	explore.randomEvent(choice);
+
 }

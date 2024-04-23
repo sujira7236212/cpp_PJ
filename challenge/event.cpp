@@ -40,7 +40,7 @@ string event::craftable(string s, string spe, string ele){
   if( s=="Water Wheel" ) a = hintWW;
   else if( s=="Wind Mill" ) a = hintWM;
   else if( s=="Solar Panel" ) a = stringSP;
-  cout<<endl<<"  You recieved a \033[1;33m"<<s<<"\033[0m Crafting Blueprint!"<<endl;
+  cout<<endl<<"  You recieved a "<<s<<" Crafting Blueprint!"<<endl;
 	cout<<endl<<"  \033[44m-------------------------------------------------------\033[0m";
 	cout<<endl<<"  \033[44m                      \033[1;37mBLUE PRINT\033[0m\033[44m                       \033[0m";
   cout<<endl<<"  \033[44m                                                       \033[0m";
@@ -136,7 +136,7 @@ void event::blueprint(int n) { //fixed chance of getting blueprint
             break;
         default: cout<<"Error";
     }
-
+    
 }
 
 

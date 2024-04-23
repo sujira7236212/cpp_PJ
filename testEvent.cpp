@@ -14,5 +14,6 @@ using namespace std;
 int main(){
     event Test;
     Test.randomEvent("METAL");
+    cout<<Test.clean_;
     return 0;
 }

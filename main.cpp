@@ -26,7 +26,7 @@ int main() {
         s2 = a.loopmenu(2,result,list,turn);/////
         result = a.check(s1, s2);
         a.addmenu(result,list);
-        // a.exploreMenu(); //turn system
+        a.exploreMenu(); //turn system
         turn++;
         
     }
