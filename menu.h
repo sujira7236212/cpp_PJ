@@ -11,9 +11,11 @@ using namespace std;
 
 class menu :public BST, public DoublyLinkedList{
     protected:
-    string  array[16], special[4]={"Water Wheel", "Wind Mill", "Solar Panels" }, hidden[4]={" "," "," "};
+    string  array[16];
+    // clean[4]={"Water Wheel", "Wind Mill", "Solar Panels" }, special[7]={" "," "," "," "};
     int flag = 8; //element count
     event explore;
+    string* clean = explore.clean[4], special = explore.special; 
 
     public:
     menu();

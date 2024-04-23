@@ -14,7 +14,7 @@ using namespace std;
 int main(){
     event Test;
     Test.randomEvent("WATER");
-    string s = Test.returnElem();
+    string s = Test.specialElem(1);
     cout<<s<<endl;
     return 0;
 }

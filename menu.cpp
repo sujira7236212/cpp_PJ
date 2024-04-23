@@ -36,7 +36,7 @@ void menu::mainmenu(){
 	cout<<"            ------------------------------------------"<<endl;
 	cout<<"   \033[4mSpecial\033[0m | ";
 	for(int k=0; k<3; k++){
-		cout<<"\033[1;33m"<<setfill(' ')<<setw(12)<<hidden[k]<<"\033[0m |"; //dont forgor change
+		cout<<"\033[1;33m"<<setfill(' ')<<setw(12)<<special[k]<<"\033[0m |"; //dont forgor change
 	}
 	cout<<endl<<"            ------------------------------------------";
 	cout<<endl<<"  -------------------------------------------------------";
@@ -96,7 +96,7 @@ void menu::gameexit(){
 }
 
 void menu::newele(int result){
-	if(flag>8) cout<<"Congratulations! You Made "<<"\033[38;5;220m"<<array[result]<<"\033[0m"<<" !\n";
+	if(flag>8 && result!=0) cout<<"Congratulations! You Made "<<"\033[38;5;220m"<<array[result]<<"\033[0m"<<" !\n";
 }
 
 int menu::loopmenu(int k, int result, DoublyLinkedList &L){

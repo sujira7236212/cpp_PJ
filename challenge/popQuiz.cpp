@@ -51,7 +51,7 @@ bool popQuiz::quiz3(){
     getInput();
     if(input=='a' || input=='b'){
         ans = false;
-        cout<<"How could you!"<<endl;
+        cout<<"How could you?! We all know they're both awesome!"<<endl;
     }
     else {
         cout<<"Can't choose huh? Well you're exactly right! They're both great aren't they?"<<endl;
