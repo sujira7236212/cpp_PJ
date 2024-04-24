@@ -31,7 +31,9 @@ void menu::elementDisplay(int r){
 		 	cout<<setfill(' ')<<setw(9)<<array[k]<<"\033[0m"<<"  |  ";
 		}
 	}
+	cout<<"           |  ";
 	cout<<endl<<"  -------------------------------------------------------";
+	
 }
 
 const string* menu::getArr(const string arr[]){
@@ -78,7 +80,7 @@ void menu::mainmenu(){
 	i==1 ? cout<<"\033[34m  Choose your 1st Element\033[0m"<<endl : cout<<"\033[36m  Please choose 2nd element\033[0m"<<endl;
 	specialDisplay();
 	elementDisplay(result);
-	cout<<"           |  ";
+	
 	cout<<endl<<"  -------------------------------------------------------";
 	cout<<endl<<"  Sorted A-Z: ";
 	L.selectionSort();

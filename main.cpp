@@ -34,10 +34,10 @@ int main() {
         cin.get();
         system("clear");
         
-        // explore.description();
-        // cout<<"         \" Press any key to to continue . . . \""<<endl<<endl;
-        // cin.get();
-        // system("clear");
+        explore.description();
+        cout<<"         \" Press any key to to continue . . . \""<<endl<<endl;
+        cin.get();
+        system("clear");
         explore.description();
         char exploreChoice = '0';
         cout<<"Do you wish to explore? (Y/N): ";
