@@ -16,7 +16,17 @@ using namespace std;
 int main(){
     event Explore;
 
+    // Explore.randomEvent();
+
+    // Explore.addClean("TEST");
+    // Explore.addSpecial(1, "test");
+
+    // Explore.cleanDisplay();
+    // Explore.specialDisplay();
+
     Explore.randomEvent();
-    Explore.craftMenu();
+
+    Explore.cleanDisplay();
+    Explore.specialDisplay();
     return 0;
 }
