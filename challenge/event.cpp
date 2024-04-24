@@ -11,8 +11,9 @@ void event::description() {
 }
 
 void event::addClean(int pos, string c){
-  cout<<"Right now, you've received "<<c
-    <<" making your city powered by clean energy. It looks like you're heading in the right direction!"<<endl;
+  system("clear");
+  cout<<"Right now, you've received "<<c<<" making your city powered by clean energy."<<endl;
+    cout<<"It looks like you're heading in the right direction!"<<endl;
       clean[pos] = c;
 }
 void event::addSpecial(int pos, string spe){
@@ -62,6 +63,9 @@ void event::randomEvent() {
 
     default:
       quiz.randomquiz();
+      if(!quiz.returnans()){
+        quiz.damage();
+      }quiz.showHP();
       break;
   }
 }
@@ -105,7 +109,7 @@ void event::craft(int blueprintNum){
       break;
     
     default:
-    cout<<"Nothing Happen!"<<endl;
+    cout<<"          \033[1mNothing Happen!\033[0m"<<endl<<endl;
       break;
     }
 }

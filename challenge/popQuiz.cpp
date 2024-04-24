@@ -14,6 +14,7 @@ bool popQuiz::quiz1(){
     cout<<"c.) Prof. Tanasanee Phienthrakul"<<endl;
     cout<<"d.) Golden Prof. Tanasanee Phienthrakul"<<endl;
     getInput();
+    system("clear");
 
     if(input=='a' || input=='b' || input=='c'|| input=='d'){
         ans = true;
@@ -33,6 +34,8 @@ bool popQuiz::quiz2(){
     cout<<"c.) 18"<<endl;
     cout<<"d.) 19"<<endl;
     getInput();
+    system("clear");
+
     if(input=='b'){
         ans = true;
         cout<<"\033[32mYou're correct!\033[0m Thanks for the excuse of putting "<<"SDGs 4: Education in our objective. XOXO"<<endl;
@@ -49,6 +52,8 @@ bool popQuiz::quiz3(){
     cout<<"a.) Prof. Tanasanee Phienthrakul"<<endl;
     cout<<"b.) Prof. Mingmanas Sivaraksa"<<endl;
     getInput();
+    system("clear");
+    
     if(input=='a' || input=='b'){
         ans = false;
         cout<<"How could you?! We all know they're both awesome!"<<endl;

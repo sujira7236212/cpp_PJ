@@ -24,8 +24,10 @@ int main() {
     while (cont == 'y'|| cont == 'Y' && a.return_flag()<16 && result !=8){
 
         system("clear");
+        a.showHP();
         s1 = a.loopmenu(1,result,list,turn,explore);
         system("clear");
+        a.showHP();
         s2 = a.loopmenu(2,result,list,turn,explore);/////
         result = a.check(s1, s2);
         a.addmenu(result,list);

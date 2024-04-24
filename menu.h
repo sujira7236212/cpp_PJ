@@ -14,7 +14,6 @@ class menu :public BST, public DoublyLinkedList, public event{
     protected:
     string  array[16];
     // clean[4]={"Water Wheel", "Wind Mill", "Solar Panels" }, special[7]={" "," "," "," "};
-    int hp = 3;
     int flag = 8; //element count
 
     // disaster forestFire("Forest fire!", 1);
@@ -34,7 +33,6 @@ class menu :public BST, public DoublyLinkedList, public event{
     void elementDisplay(int);
     // void cleanDisplay(const string* arr[]) ;
     // void specialDisplay(const string* arr[]) ;
-    void showHP();
     void mainmenu();
     const string* getArr(const string arr[]);
     void gamemenu(int,int,DoublyLinkedList &, event &);

@@ -56,12 +56,10 @@ int BST::check(int i,int j){
                 return 0;
             }
             else if((findNode(t,i)->data )== (findNode(t,j)->data)){
-                point += 20;
                 return findNode(t,i)->data;
             }
             else{
                 cout<<"Nothing Happen"<<endl;
-                point -= 10;
                 return 0;
             }
 }
@@ -133,6 +131,10 @@ TreeNodePtr BST::search(TreeNodePtr root, int value) {
         return search(root->right, value);
     
     return search(root->left, value);
+}
+
+void BST::showHP(){
+	cout<<"\033[1mHP: "<<hp<<"\033[0m"<<endl;
 }
 
 int BST::return_hp(){
