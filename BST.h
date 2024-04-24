@@ -17,17 +17,17 @@ class BST{
         int hp = 3;
         TreeNodePtr root = NULL;
     public:
+    TreeNodePtr t;
         BST();
         ~BST();
         TreeNodePtr newNode(int item,string);
         TreeNodePtr findNode(TreeNodePtr,int);
         string findNodeName(TreeNodePtr,int);
+        int findNodeData(TreeNodePtr, string);
         TreeNodePtr insert(TreeNodePtr ,int ,string );
         int check(int ,int );
         string returnname(int);
         int return_hp();
-        int return_point();
-        void update_point(int);
         void damage();
         TreeNodePtr search(TreeNodePtr,int);
         //string returnname(int);

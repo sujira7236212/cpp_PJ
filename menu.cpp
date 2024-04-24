@@ -33,13 +33,7 @@ void menu::mainmenu(){
 
  void menu::gamemenu(int i, int result, DoublyLinkedList &L){
 	i==1 ? cout<<"\033[34m"<<"  Choose your 1st Element"<<"\033[0m"<<endl : cout<<"\033[36m"<<"  Please choose 2nd element"<<"\033[0m"<<endl;
-	// cout<<"            ------------------------------------------"<<endl;
-	// cout<<"   \033[4mSpecial\033[0m | ";
-	// for(int k=0; k<3; k++){
-	// 	cout<<"\033[1;33m"<<setfill(' ')<<setw(12)<<special[k]<<"\033[0m |"; //dont forgor change
-	// }
-	// cout<<endl<<"            ------------------------------------------";
-	explore.specialDisplay();
+
 	cout<<endl<<"  -------------------------------------------------------";
 	for(int k=1;k<16;k++){
 		if(k%4==1 || k==1) cout<<endl<<" |  ";
@@ -54,7 +48,8 @@ void menu::mainmenu(){
 	L.selectionSort();
 	L.print();
 	cout<<"  -------------------------------------------------------"<<endl;
-	explore.cleanDisplay();
+	// explore.specialDisplay();
+	// explore.cleanDisplay();
 }
 
 void menu::addmenu(int add, DoublyLinkedList &L){
@@ -114,12 +109,71 @@ int menu::loopmenu(int k, int result, DoublyLinkedList &L,int turn){
 	} 
 }
 
-void menu::exploreMenu(){
-	string choice;
-	explore.description();
-	cout<<"Choose an Element as your company: ";
-	cin>>choice;
-	transform(choice.begin(), choice.end(), choice.begin(), ::toupper);
-	explore.randomEvent(choice);
+int menu::getDisasterInput(){
+	string name;
+	cin>>name;
+	
+	int n =findNodeData(t, name);
 
+	return n;
 }
+
+void menu::customDisaster(){
+	if (rand()%1){
+		if (array[1] == "Water"){
+			if(rand()%2){
+			forestFire.description();
+			int n = getDisasterInput();
+				if(forestFire.isSolved(n))
+					cout<<"Great job! "<<endl;
+				else {
+					damage();
+					hp = return_hp();
+				}
+			}
+		}
+		if (array[5] == "Trees"){
+			if(rand()%2){
+			landSlide.description();
+			int n = getDisasterInput();
+				if(landSlide.isSolved(n))
+					cout<<"Excellent!"<<endl;
+				else {
+					damage();
+					hp = return_hp();
+				}
+			}
+		}
+		if (array[14] == "People"){
+			if(rand()%2){
+			people.description();
+			int n = getDisasterInput();
+				damage();
+					hp = return_hp();
+					realPeople.description();
+						n = getDisasterInput();
+						if(realPeople.isSolved())
+							cout<<"Wow!"<<endl;
+						else {
+							damage();
+							hp = return_hp();
+						}
+				else cout<<"what? how???"; //should'nt be possible
+			}
+	}
+	}
+}
+// void menu::explore(){
+// 	description();
+//     char c;
+        
+//         cout<<"Do you want to explore?";
+//         cin>>c;
+
+//         if (c == 'y'||'Y'){
+//             randomEvent();
+//             craftMenu();
+//         }
+// }
+	
+

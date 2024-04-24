@@ -21,7 +21,7 @@ TreeNodePtr BST:: insert(TreeNodePtr tmp,int item,string n){
     return tmp;
 }
 
-TreeNodePtr t;
+
 
 BST::BST() {
     //cout<<"HI";
@@ -40,7 +40,7 @@ BST::BST() {
     insert(root,10,"House");
     insert(root,14,"People");
     insert(root,9,"Wood");
-    insert(root,11,"Meatal");
+    insert(root,11,"Metal");
     insert(root,13,"Male");
     insert(root,15,"Female");
 }
@@ -109,6 +109,22 @@ string BST::findNodeName(TreeNodePtr root, int value){
     return current->name;   
 }
 
+int BST::findNodeData(string n){
+    if (root == nullptr) {
+    return -1; // not found
+  }
+
+  if (root->name == n) {
+    return root->data;
+  }
+
+  if (n < root->name) { 
+    return findNodeData(root->left, n);
+  } else {
+    return findNodeData(root->right, n);
+  }
+}
+
 TreeNodePtr BST::search(TreeNodePtr root, int value) {
     if (root == NULL || root->data == value)
         return root;
@@ -119,17 +135,9 @@ TreeNodePtr BST::search(TreeNodePtr root, int value) {
     return search(root->left, value);
 }
 
-
-int BST::return_point(){
-    return point;
-}
-
 int BST::return_hp(){
+    cout<<"You have "<<hp<<"left."<<endl;
     return hp;
-}
-
-void BST::update_point(int x){
-    point += x;
 }
 
 void BST::damage(){

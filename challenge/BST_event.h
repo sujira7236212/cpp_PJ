@@ -1,0 +1,65 @@
+#ifndef BST_EVENT_H
+#define BST_EVENT_H
+
+//water wheel
+class waterWheelC {
+public:
+    string hint = " Keep yourself hydrated while driving. ";
+    bool blueprintGet = false;
+    void blueprint();
+};
+void waterWheelC::blueprint(){
+    blueprintGet = true;
+
+  cout<<endl<<"  You recieved a "<<"Water Wheel"<<" Crafting Blueprint!"<<endl;
+	cout<<endl<<"  \033[44m-------------------------------------------------------\033[0m";
+	cout<<endl<<"  \033[44m                      \033[1;37mBLUEPRINT\033[0m\033[44m                        \033[0m";
+  cout<<endl<<"  \033[44m                                                       \033[0m";
+	cout<<endl<<"  \033[44m      \""<<hint<<"\"        \033[0m";
+  cout<<endl<<"  \033[44m                                                       \033[0m";
+	cout<<endl<<"  \033[44m    You now have the ability to craft a \033[1;44;33m"<<setfill(' ')<<setw(11)<<"Water Wheel"<<" !  \033[0m";
+  cout<<endl<<"  \033[44m-------------------------------------------------------\033[0m"<<endl<<endl;
+}
+
+
+//windmill
+class windMillC{
+public:
+    string hint = "          Tree flesh goes spin.        ";
+    bool blueprintGet = false;
+    void blueprint();
+};
+void windMillC::blueprint(){
+    blueprintGet = true;
+  cout<<endl<<"  You recieved a "<<"Windmill"<<" Crafting Blueprint!"<<endl;
+	cout<<endl<<"  \033[44m-------------------------------------------------------\033[0m";
+	cout<<endl<<"  \033[44m                      \033[1;37mBLUEPRINT\033[0m\033[44m                        \033[0m";
+  cout<<endl<<"  \033[44m                                                       \033[0m";
+	cout<<endl<<"  \033[44m      \""<<hint<<"\"        \033[0m";
+  cout<<endl<<"  \033[44m                                                       \033[0m";
+	cout<<endl<<"  \033[44m    You now have the ability to craft a \033[1;44;33m"<<setfill(' ')<<setw(11)<<"Windmill"<<" !  \033[0m";
+  cout<<endl<<"  \033[44m-------------------------------------------------------\033[0m"<<endl<<endl;
+}
+
+
+//solarpanel
+class solarPanelC {
+public:
+    string hint = "    Silicon valley sure loves metal.   ";
+    bool blueprintGet = false;
+    void blueprint();
+};
+
+void solarPanelC::blueprint(){
+    blueprintGet = true;
+  cout<<endl<<"  You recieved a "<<"Solar Panel"<<" Crafting Blueprint!"<<endl;
+	cout<<endl<<"  \033[44m-------------------------------------------------------\033[0m";
+	cout<<endl<<"  \033[44m                      \033[1;37mBLUEPRINT\033[0m\033[44m                        \033[0m";
+  cout<<endl<<"  \033[44m                                                       \033[0m";
+	cout<<endl<<"  \033[44m      \""<<hint<<"\"        \033[0m";
+  cout<<endl<<"  \033[44m                                                       \033[0m";
+	cout<<endl<<"  \033[44m    You now have the ability to craft a \033[1;44;33m"<<setfill(' ')<<setw(11)<<"Solar Panel"<<" !  \033[0m";
+  cout<<endl<<"  \033[44m-------------------------------------------------------\033[0m"<<endl<<endl;
+}
+
+#endif
