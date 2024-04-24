@@ -13,6 +13,7 @@ using namespace std;
 int main() {
     DoublyLinkedList list;
     menu a;
+    event explore;
     int result = 0;
     int s1, s2;
     char cont = 'y';
@@ -20,33 +21,28 @@ int main() {
     a.mainmenu();
     while (cont == 'y'|| cont == 'Y' && a.return_flag()<16 && result !=8){
 
-        
+        system("clear");
         s1 = a.loopmenu(1,result,list,turn);
-        // system("clear");
-        a.newele(result);
-
+        system("clear");
         s2 = a.loopmenu(2,result,list,turn);/////
         result = a.check(s1, s2);
-
         a.addmenu(result,list);
         a.newele(result);
+        cin.get();
+        cin.get();
+        system("clear");
         
         
-        event explore;
         explore.description();
-        char exploreChoice;
-        cout<<"Do you wish to explore? (Y/N): ";
-        cin>>exploreChoice;
+        cout<<"         \" Press any key to to continue . . . \""<<endl<<endl;
+        cin.get();
+        system("clear");
+        explore.description();
+        explore.randomEvent();
+        explore.craftMenu();
 
-        if (exploreChoice == 'y'||'Y'){
-            explore.randomEvent();
-            explore.craftMenu();
-
-            explore.cleanDisplay();
-            explore.specialDisplay();
-        } else if (exploreChoice == 'n' || 'N'){
-            break;
-        }
+        explore.cleanDisplay();
+        explore.specialDisplay();
 
         cout<<"Continue? (Y/N): ";
         cin>>cont;

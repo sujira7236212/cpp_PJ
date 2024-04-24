@@ -23,18 +23,20 @@ menu::menu(){
 menu::~menu(){}
  
 void menu::mainmenu(){
-	cout<<"========================================================="<<endl<<endl<<endl;
-	cout<<"                  \033[1;37m C L E A N  C R A F T\033[0m"<<endl<<endl<<endl;
-	cout<<"              \" Press any key to to enter \""<<endl<<endl;
-	cout<<"     \033[1;31m⚘   \033[1;33m⚘   \033[1;36m⚘   \033[1;34m⚘                     \033[1;31m⚘   \033[1;33m⚘   \033[1;36m⚘   \033[1;34m⚘\033[0m"<<endl;
-	cout<<"========================================================="<<endl<<endl;
+	cout<<"==========================================================="<<endl<<endl<<endl;
+	cout<<"                   \033[1;37m C L E A N  C R A F T\033[0m"<<endl<<endl<<endl;
+	cout<<"               \" Press any key to to enter \""<<endl<<endl<<endl;
+	cout<<"      \033[1;31m⚘   \033[1;33m⚘   \033[1;36m⚘   \033[1;34m⚘                     \033[1;31m⚘   \033[1;33m⚘   \033[1;36m⚘   \033[1;34m⚘\033[0m"<<endl<<endl;
+	cout<<"==========================================================="<<endl<<endl;
 	cin.get();
 }
 
  void menu::gamemenu(int i, int result, DoublyLinkedList &L){
-	i==1 ? cout<<"\033[34m"<<"  Choose your 1st Element"<<"\033[0m"<<endl : cout<<"\033[36m"<<"  Please choose 2nd element"<<"\033[0m"<<endl;
-
-	cout<<endl<<"  -------------------------------------------------------";
+	cleanDisplay();
+	cout<<endl;
+	i==1 ? cout<<"\033[34m  Choose your 1st Element\033[0m"<<endl : cout<<"\033[36m  Please choose 2nd element\033[0m"<<endl;
+	specialDisplay();
+	cout<<"  -------------------------------------------------------";
 	for(int k=1;k<16;k++){
 		if(k%4==1 || k==1) cout<<endl<<" |  ";
 		if(!array[k].empty()){
@@ -80,12 +82,16 @@ void menu::gameexit(){
 }
 
 void menu::newele(int result){
-	if(flag>8 && result!=0) cout<<"Congratulations! You Made "<<"\033[38;5;220m"<<array[result]<<"\033[0m"<<" !\n";
+	if(flag>8 && result!=0) {
+	cout<<endl<<"         ----------------------------------------"<<endl;
+	cout<<"        |  Congratulations! You Made \033[38;5;220m"<<setfill(' ')<<setw(9)<<array[result]<<"\033[0m"<<"!  |";
+	cout<<endl<<"         ----------------------------------------"<<endl;
+	}
 }
 
 int menu::loopmenu(int k, int result, DoublyLinkedList &L,int turn){
     string select1, temp; 
-		cout<<"\033[1mRound : "<<turn<<"\033[0m"<<endl<<endl;
+		cout<<"\033[1mRound : "<<turn<<"\033[0m"<<endl;
         gamemenu(k,result,L);
 	while(true){
 	k==1 ? cout<<"\033[34m" :  cout<<"\033[36m" ;
@@ -99,9 +105,6 @@ int menu::loopmenu(int k, int result, DoublyLinkedList &L,int turn){
 		transform(temp.begin(), temp.end(), temp.begin(), ::toupper);
         if (temp == select1) {
             found = true;
-			k==1 ? cout<<"\033[34m" :  cout<<"\033[36m" ;
-            cout << "  You chose: " << array[i] << endl;
-			cout<<"\033[0m";
             return i;
         }
     }

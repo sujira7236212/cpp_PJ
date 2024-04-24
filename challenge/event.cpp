@@ -3,9 +3,11 @@
 
 void event::description() {
   
-    cout<<"Go explore for the Sustainable Energy Sources!"<<endl
-    <<"You'll have chances to find blueprints along with required materials"<<endl
-    <<"or some fun quizes instead!"<<endl;
+    cout<<"---------------------------------------------------------"<<endl;
+    cout<<"                  \033[1;4mEXPEDITION PLAN\033[0m"<<endl<<endl;
+    cout<<" Go on an exploration for \033[1mSustainable Energy Sources\033[0m!"<<endl
+        <<" You'll have chances to find \033[34mblueprints\033[0m along with many "<<endl 
+        <<" other \033[33mspecial materials\033[0m!"<<endl<<endl;
 }
 
 void event::addClean(string c){

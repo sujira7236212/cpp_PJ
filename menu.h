@@ -10,7 +10,7 @@
 #include <string>
 using namespace std;
 
-class menu :public BST, public DoublyLinkedList{
+class menu :public BST, public DoublyLinkedList, public event{
     protected:
     string  array[16];
     // clean[4]={"Water Wheel", "Wind Mill", "Solar Panels" }, special[7]={" "," "," "," "};
