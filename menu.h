@@ -21,6 +21,9 @@ class menu :public BST, public DoublyLinkedList, public event{
     // disaster landSlide("The soil is degraded!", 5);
     // disaster people("There's a mob between men and women. Shit's gettin real bloddy rn.", 0);
     // disaster realPeople("Think again!", 14);
+
+    // const string* cleanArrayPtr=nullptr;
+    // const string* specialArrayPtr=nullptr;
                 
 
     public:
@@ -28,15 +31,18 @@ class menu :public BST, public DoublyLinkedList, public event{
     ~menu();
     void newele(int);
     void gameexit();
+    void elementDisplay(int);
+    // void cleanDisplay(const string* arr[]) ;
+    // void specialDisplay(const string* arr[]) ;
     void mainmenu();
+    const string* getArr(const string arr[]);
     void gamemenu(int,int,DoublyLinkedList &);
     int loopmenu(int,int,DoublyLinkedList &,int);
     void addmenu(int,DoublyLinkedList &);
     void addHidden(int,DoublyLinkedList &);
     int return_flag();
-        int getDisasterInput();
-    void customDisaster();
-    // void explore();
+    //     int getDisasterInput();
+    // void customDisaster();
 };
 
 #endif

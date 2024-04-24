@@ -14,6 +14,8 @@ int main() {
     DoublyLinkedList list;
     menu a;
     event explore;
+    // a.cleanArrayPtr = a.getArr(explore.clean[4]);
+    // a.specialArrayPtr = a.getArr(explore.special[4]);
     int result = 0;
     int s1, s2;
     char cont = 'y';
@@ -32,14 +34,20 @@ int main() {
         cin.get();
         system("clear");
         
-        
+        // explore.description();
+        // cout<<"         \" Press any key to to continue . . . \""<<endl<<endl;
+        // cin.get();
+        // system("clear");
         explore.description();
-        cout<<"         \" Press any key to to continue . . . \""<<endl<<endl;
-        cin.get();
-        system("clear");
-        explore.description();
-        explore.randomEvent();
-        explore.craftMenu();
+        char exploreChoice = '0';
+        cout<<"Do you wish to explore? (Y/N): ";
+        cin>>exploreChoice;
+
+        if(exploreChoice =='y' || exploreChoice == 'Y'){
+            explore.randomEvent();
+            cin.get();
+            exploreChoice == 'n';
+        }
 
         explore.cleanDisplay();
         explore.specialDisplay();

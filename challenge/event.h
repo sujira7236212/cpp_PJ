@@ -2,6 +2,7 @@
 #include <cctype>
 #include <iomanip>
 #include <unordered_set>
+#include <random>
 #include "challenge.h"
 #include "BST_event.h"
 using namespace std;
@@ -21,7 +22,7 @@ protected:
     special[4]={" "," "," "}; // "Wheels", "Rotor, "Silicon"
 
 public:
-    
+
         void cleanDisplay() {
 	        cout<<endl<<"                \033[4mSustainable Energy Sources\033[0m "<<endl;
             cout<<"         -----------------------------------------"<<endl;
@@ -40,15 +41,11 @@ public:
 	        cout<<endl<<"             -----------------------------------"<<endl;
             }
 
-        void addClean(string c);
+        void addClean(int pos, string c);
         void addSpecial(int pos, string spe);
         void description();
         void randomEvent(); //random what you get
         void specialElem(int n); //print element in special array
-
-        void chooseBlueprint();
-
-        int craftMenu();
         void craft(int blueprintNum); //print element in clean array
         
         

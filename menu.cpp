@@ -21,6 +21,47 @@ menu::menu(){
 }
 
 menu::~menu(){}
+
+void menu::elementDisplay(int r){
+	cout<<"  -------------------------------------------------------";
+	for(int k=1;k<16;k++){
+		if(k%4==1 || k==1) cout<<endl<<" |  ";
+		if(!array[k].empty()){
+			if(k == r) cout<<"\033[38;5;220m";
+		 	cout<<setfill(' ')<<setw(9)<<array[k]<<"\033[0m"<<"  |  ";
+		}
+	}
+	cout<<endl<<"  -------------------------------------------------------";
+}
+
+const string* menu::getArr(const string arr[]){
+	return arr;
+}
+
+// void menu::cleanDisplay(const string* arr[]) {
+// 	        cout<<endl<<"                \033[4mSustainable Energy Sources\033[0m "<<endl;
+//             cout<<"         -----------------------------------------"<<endl;
+// 	        cout<<"        |";
+
+// 			const std::string* string_array = arr[0];
+
+//             for(int i = 1; i < 4; i++){
+// 		    cout<<"\033[1;33m"<<setfill(' ')<<setw(12)<<string_array<<"\033[0m |";
+// 	        }
+// 	        cout<<endl<<"         -----------------------------------------"<<endl;
+//             }
+
+// void menu::specialDisplay(const string* arr[]) {
+//             cout<<"             -----------------------------------"<<endl;
+// 	        cout<<"    \033[4mSpecial\033[0m |";
+
+// 			const std::string* string_array = arr[0];
+
+// 	        for(int i = 0; i < 3; i++){
+// 		    cout<<"\033[1;33m"<<setfill(' ')<<setw(10)<<string_array<<"\033[0m |";
+// 	        }
+// 	        cout<<endl<<"             -----------------------------------"<<endl;
+//             }
  
 void menu::mainmenu(){
 	cout<<"==========================================================="<<endl<<endl<<endl;
@@ -36,14 +77,7 @@ void menu::mainmenu(){
 	cout<<endl;
 	i==1 ? cout<<"\033[34m  Choose your 1st Element\033[0m"<<endl : cout<<"\033[36m  Please choose 2nd element\033[0m"<<endl;
 	specialDisplay();
-	cout<<"  -------------------------------------------------------";
-	for(int k=1;k<16;k++){
-		if(k%4==1 || k==1) cout<<endl<<" |  ";
-		if(!array[k].empty()){
-			if(k==result) cout<<"\033[38;5;220m";
-		 	cout<<setfill(' ')<<setw(9)<<array[k]<<"\033[0m"<<"  |  ";
-		}
-	}
+	elementDisplay(result);
 	cout<<"           |  ";
 	cout<<endl<<"  -------------------------------------------------------";
 	cout<<endl<<"  Sorted A-Z: ";
@@ -167,17 +201,4 @@ int menu::loopmenu(int k, int result, DoublyLinkedList &L,int turn){
 // 	}
 // }
 
-// void menu::explore(){
-// 	description();
-//     char c;
-        
-//         cout<<"Do you want to explore?";
-//         cin>>c;
-
-//         if (c == 'y'||'Y'){
-//             randomEvent();
-//             craftMenu();
-//         }
-// }
-	
 

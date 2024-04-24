@@ -74,7 +74,7 @@ DoublyLinkedList::DoublyLinkedList() {
     insert("Land");
     insert("Trees");
     insert("Animals");
-    insert("Woods");
+    insert("Wood");
     insert("Metal");
 	insert("Male");
 	insert("Female");
