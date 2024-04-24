@@ -74,11 +74,11 @@ void menu::mainmenu(){
 	cin.get();
 }
 
- void menu::gamemenu(int i, int result, DoublyLinkedList &L){
-	cleanDisplay();
+ void menu::gamemenu(int i, int result, DoublyLinkedList &L, event &exp){
+	exp.cleanDisplay();
 	cout<<endl;
 	i==1 ? cout<<"\033[34m  Choose your 1st Element\033[0m"<<endl : cout<<"\033[36m  Please choose 2nd element\033[0m"<<endl;
-	specialDisplay();
+	exp.specialDisplay();
 	elementDisplay(result);
 	
 	cout<<endl<<"  -------------------------------------------------------";
@@ -125,10 +125,10 @@ void menu::newele(int result){
 	}
 }
 
-int menu::loopmenu(int k, int result, DoublyLinkedList &L,int turn){
+int menu::loopmenu(int k, int result, DoublyLinkedList &L,int turn, event &exp){
     string select1, temp; 
 		cout<<"\033[1mRound : "<<turn<<"\033[0m"<<endl;
-        gamemenu(k,result,L);
+        gamemenu(k,result,L,exp);
 	while(true){
 	k==1 ? cout<<"\033[34m" :  cout<<"\033[36m" ;
 	cout<<endl<<"  Your selection: ";

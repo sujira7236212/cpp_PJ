@@ -17,10 +17,10 @@ bool popQuiz::quiz1(){
 
     if(input=='a' || input=='b' || input=='c'|| input=='d'){
         ans = true;
-        cout<<"Of course! They're all real!"<<endl;
+        cout<<"\033[32mOf course! They're all real!\033[0m"<<endl;
     }
     else {
-        cout<<"How did you eff this up? F for you!"<<endl;
+        cout<<"How did you eff this up? \033[41mF\033[0m for you!"<<endl;
         ans = false;
     }
     return ans;
@@ -35,11 +35,11 @@ bool popQuiz::quiz2(){
     getInput();
     if(input=='b'){
         ans = true;
-        cout<<"You're correct! Thanks for the excuse of putting SDGs 4: Education in our objective. XOXO"<<endl;
+        cout<<"\033[32mYou're correct!\033[0m Thanks for the excuse of putting "<<"SDGs 4: Education in our objective. XOXO"<<endl;
     }
     else if(input=='a' || input=='c'|| input=='d'){
         ans = false;
-        cout<<"OMG. Didn't you take MUGE100 class? You can't mess this up!"<<endl;
+        cout<<"OMG. Didn't you take \033[1mMUGE100\033[0m class? You can't mess this up!"<<endl;
     }
     return ans;
 }
@@ -54,7 +54,7 @@ bool popQuiz::quiz3(){
         cout<<"How could you?! We all know they're both awesome!"<<endl;
     }
     else {
-        cout<<"Can't choose huh? Well you're exactly right! They're both great aren't they?"<<endl;
+        cout<<"Can't choose huh? Well you're exactly right!"<<"They're both great aren't they?"<<endl;
         ans = true;
     }
     return ans;

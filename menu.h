@@ -37,8 +37,8 @@ class menu :public BST, public DoublyLinkedList, public event{
     void showHP();
     void mainmenu();
     const string* getArr(const string arr[]);
-    void gamemenu(int,int,DoublyLinkedList &);
-    int loopmenu(int,int,DoublyLinkedList &,int);
+    void gamemenu(int,int,DoublyLinkedList &, event &);
+    int loopmenu(int,int,DoublyLinkedList &,int, event &);
     void addmenu(int,DoublyLinkedList &);
     void addHidden(int,DoublyLinkedList &);
     int return_flag();

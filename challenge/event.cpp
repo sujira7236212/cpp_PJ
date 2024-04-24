@@ -17,7 +17,6 @@ void event::addClean(int pos, string c){
 }
 void event::addSpecial(int pos, string spe){
   special[pos] = spe;
-
 }
 
 void event::randomEvent() {
@@ -88,21 +87,21 @@ void event::craft(int blueprintNum){
       if (element1 == "WHEELS" && element2 == "WATER"){
         clean_ = "Water Wheel";
         addClean(0, clean_);
-      }
+      }else cout<<"          \033[1mNothing Happen!\033[0m"<<endl<<endl;
       break;
     
     case 2: //windmill
       if (element1 == "ROTOR" && element2 == "WOOD"){
       clean_ = "Wind Mill";
       addClean(1, clean_);
-      }
+      }else cout<<"          \033[1mNothing Happen!\033[0m"<<endl<<endl;
       break;
 
     case 3: //solarpanel
       if (element1 == "SILICON" && element2 == "METAL"){
       clean_ = "Solar Panel";
       addClean(2, clean_);
-      }
+      }else cout<<"          \033[1mNothing Happen!\033[0m"<<endl<<endl;
       break;
     
     default:
@@ -144,8 +143,9 @@ void event::specialElem(int n){ //return to add element in menu
             element = "Nothing.";
             break;
     }
-  cout<<"Congratulations! You gain "<<element<<"!"<<endl;
-  
+  cout<<endl<<"         ----------------------------------------"<<endl;
+	cout<<"        |  Congratulations! You gain \033[38;5;220m"<<setfill(' ')<<setw(9)<<element<<"\033[0m"<<"!  |";
+	cout<<endl<<"         ----------------------------------------"<<endl;
 }
 
 
