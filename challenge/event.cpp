@@ -2,12 +2,15 @@
 
 
 void event::description() {
+  
     cout<<"Go explore for the Sustainable Energy Sources!"<<endl
     <<"You'll have chances to find blueprints along with required materials"<<endl
     <<"or some fun quizes instead!"<<endl;
 }
 
 void event::addClean(string c){
+  cout<<"Right now, you've received"<<c
+    <<"making your city powered by clean energy. It looks like you're heading in the right direction!"<<endl;
             static int pos = 0;
             if(pos<4){
                clean[pos] = c;
@@ -20,7 +23,8 @@ void event::addSpecial(int pos, string spe){
 }
 
 void event::randomEvent() {
-  static std::unordered_set<int> used_options; // Flag to track if a special element or blueprint has been used
+  static unordered_set<int> used_options ; // Flag to track if a special element or blueprint has been used
+  used_options.count(0);
 
   int n = rand() % 4;
 
@@ -30,7 +34,7 @@ void event::randomEvent() {
         specialElem(1);
         used_options.insert(1);
       } else
-        waterWheel.blueprint();
+        // waterWheel.blueprint();
       break;
 
     case 2: //windmill
@@ -55,7 +59,49 @@ void event::randomEvent() {
   }
 }
 
-void event::craftMenu(){
+void event::chooseBlueprint() {
+  char blueprintChoice;
+  int blueprintNum;
+
+  do {
+    cout << "Choose blueprint: ";
+    cin >> blueprintChoice;
+
+    if (blueprintChoice != '1' && blueprintChoice != '2' && blueprintChoice != '3') {
+      cout << "Invalid choice. Please enter 1, 2, or 3." << endl;
+    }
+  } while (blueprintChoice != '1' && blueprintChoice != '2' && blueprintChoice != '3');
+
+  switch (blueprintChoice) {
+    case '1':
+      waterWheel.blueprintAvailable();
+      if (!waterWheel.blueprintGet) {
+        chooseBlueprint();
+      }
+      break;
+    case '2':
+      windMill.blueprintAvailable();
+      if (!windMill.blueprintGet) {
+        chooseBlueprint();
+      }
+      break;
+    case '3':
+      solarPanel.blueprintAvailable();
+      if (!solarPanel.blueprintGet) {
+        chooseBlueprint(); 
+      }
+      break;
+    default:
+      break;
+  }
+}
+
+
+      
+
+int event::craftMenu(){
+  cleanDisplay();
+  specialDisplay();
   char choice, blueprintChoice;
   int availableBlueprint = 0;
   cout<<"Craft? Y/N: ";
@@ -64,45 +110,36 @@ void event::craftMenu(){
   if (choice == 'y' || choice == 'Y') {
     cout << "Blueprints: " << endl;
     if (!waterWheel.blueprintGet) {
-      cout << " \033[44m1) Water Wheels\033[0m";
+      cout << " \033[30m 1) Water Wheels\033[0m"<<endl;
+    } else {
+      cout<<"1) Water Wheels"<<endl;
       availableBlueprint=1;
-    } else cout<<"1) Water Wheels"<<endl;
+    }
 
     if (!windMill.blueprintGet) {
-      cout << " \033[44m2) Wind Mill\033[0m";
+      cout << " \033[30m 2) Wind Mill\033[0m"<<endl;
+      
+    } else {
+      cout<<"2) Wind Mill"<<endl;
       availableBlueprint=2;
-    } else cout<<"2) Wind Mill"<<endl;
+    }
 
     if (!solarPanel.blueprintGet) {
-      cout << " \033[44m3) Solar Panel\033[0m";
+      cout << " \033[30m 3) Solar Panel\033[0m"<<endl;
+      
+    } else {
+      cout<<"3) Solar Panel"<<endl;
       availableBlueprint=3;
-    } else cout<<"3) Solar Panel"<<endl;
+    }
   }
 
   if (availableBlueprint == 0) {
       cout << "No blueprints available. Explore to find more!" << endl;
-      return; // Exit the function if no blueprints
+      return 0; // Exit the function if no blueprints
   }
 
-  cout << "Choose blueprint: ";
-  cin >> blueprintChoice;
+  chooseBlueprint();
 
-      while (blueprintChoice != '1' && blueprintChoice != '2' && blueprintChoice != '3') {
-        cout << "Invalid choice. Please enter 1, 2, or 3: ";
-        cin >> blueprintChoice;
-      }
-      
-    if (availableBlueprint != (int)(blueprintChoice - '0')) {
-      cout << "This blueprint is unavailable. Please choose the available option: ";
-      cin >> blueprintChoice;
-
-      while (blueprintChoice != '1' && blueprintChoice != '2' && blueprintChoice != '3') {
-        cout << "Invalid choice. Please enter 1, 2, or 3: ";
-        cin >> blueprintChoice;
-      }
-    }
-
-  cout << "You chose blueprint " << blueprintChoice << "." << endl;
       switch(blueprintChoice){
         case 1:
           waterWheel.blueprint();
@@ -118,9 +155,12 @@ void event::craftMenu(){
           break;
         default: break;
       }
+  return blueprintChoice;
 }
 
 void event::craft(int blueprintNum){
+  cleanDisplay();
+  specialDisplay();
   string element1, element2;
     cout<<"  Please input a special element and an element: "<<endl<<endl;
     cout<<"    1) Special Element: \033[33m";
@@ -137,29 +177,32 @@ void event::craft(int blueprintNum){
     case 1: //waterwheel
       if (element1 == "WHEEL" && element2 == "WATER")
       clean_ = "Water Wheel";
+      addClean(clean_);
       break;
     
     case 2: //windmill
       if (element1 == "ROTOR" && element2 == "WOOD")
       clean_ = "Wind Mill";
+      addClean(clean_);
       break;
 
     case 3: //solarpanel
       if (element1 == "WHEEL" && element2 == "WATER")
       clean_ = "Solar Panel";
+      addClean(clean_);
       break;
     
     default:
+    cout<<"Nothing Happen!"<<endl;
       break;
     }
-    addClean(clean_);
-    cout<<"Right now, you've received"<<clean_
-    <<"making your city powered by clean energy. It looks like you're heading in the right direction!"<<endl;
 }
 
 
 void event::specialElem(int n){ //return to add element in menu
     string elemBluep, element;
+
+    n = rand()%4;
     
     switch(n){
         case 1:
@@ -171,7 +214,7 @@ void event::specialElem(int n){ //return to add element in menu
         break;
 
         case 2:
-          element = "Silicon";
+          element = "Wheels";
             if(!waterWheel.blueprintGet)
               elemBluep = "x Wheels";
             else elemBluep = "/ Wheels";

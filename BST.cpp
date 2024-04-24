@@ -109,21 +109,21 @@ string BST::findNodeName(TreeNodePtr root, int value){
     return current->name;   
 }
 
-int BST::findNodeData(string n){
-    if (root == nullptr) {
-    return -1; // not found
-  }
+// int BST::findNodeData(string n){
+//     if (root == nullptr) {
+//     return -1; // not found
+//   }
 
-  if (root->name == n) {
-    return root->data;
-  }
+//   if (root->name == n) {
+//     return root->data;
+//   }
 
-  if (n < root->name) { 
-    return findNodeData(root->left, n);
-  } else {
-    return findNodeData(root->right, n);
-  }
-}
+//   if (n < root->name) { 
+//     return findNodeData(root->left, n);
+//   } else {
+//     return findNodeData(root->right, n);
+//   }
+// }
 
 TreeNodePtr BST::search(TreeNodePtr root, int value) {
     if (root == NULL || root->data == value)

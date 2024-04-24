@@ -22,23 +22,23 @@ protected:
 
 public:
     
-        // void cleanDisplay() {
-	    //     cout<<"                 \033[4mSustainable Energy Sources\033[0m "<<endl;
-        //     cout<<"          ------------------------------------------"<<endl;
-	    //     cout<<"         |";
-        //     for(int i = 1; i < 4; i++){
-		//     cout<<"\033[1;33m"<<setfill(' ')<<setw(12)<<clean[i]<<"\033[0m |";
-	    //     }
-	    //     cout<<endl<<"          ------------------------------------------";
-        //     }
-        // void specialDisplay() {
-        //     cout<<"            ------------------------------------------"<<endl;
-	    //     cout<<"   \033[4mSpecial\033[0m | ";
-	    //     for(int i = 0; i < 3; i++){
-		//     cout<<"\033[1;33m"<<setfill(' ')<<setw(12)<<special[i]<<"\033[0m |";
-	    //     }
-	    //     cout<<endl<<"            ------------------------------------------";
-        //     }
+        void cleanDisplay() {
+	        cout<<"                 \033[4mSustainable Energy Sources\033[0m "<<endl;
+            cout<<"          ------------------------------------------"<<endl;
+	        cout<<"         |";
+            for(int i = 1; i < 4; i++){
+		    cout<<"\033[1;33m"<<setfill(' ')<<setw(12)<<clean[i]<<"\033[0m |";
+	        }
+	        cout<<endl<<"          ------------------------------------------"<<endl;
+            }
+        void specialDisplay() {
+            cout<<"            ------------------------------------------"<<endl;
+	        cout<<"   \033[4mSpecial\033[0m | ";
+	        for(int i = 0; i < 3; i++){
+		    cout<<"\033[1;33m"<<setfill(' ')<<setw(12)<<special[i]<<"\033[0m |";
+	        }
+	        cout<<endl<<"            ------------------------------------------"<<endl;
+            }
 
         void addClean(string c);
         void addSpecial(int pos, string spe);
@@ -46,7 +46,9 @@ public:
         void randomEvent(); //random what you get
         void specialElem(int n); //print element in special array
 
-        void craftMenu();
+        void chooseBlueprint();
+
+        int craftMenu();
         void craft(int blueprintNum); //print element in clean array
         
         

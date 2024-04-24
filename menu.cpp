@@ -109,60 +109,61 @@ int menu::loopmenu(int k, int result, DoublyLinkedList &L,int turn){
 	} 
 }
 
-int menu::getDisasterInput(){
-	string name;
-	cin>>name;
+// int menu::getDisasterInput(){
+// 	string name;
+// 	cin>>name;
 	
-	int n =findNodeData(t, name);
+// 	int n =findNodeData(t, name);
 
-	return n;
-}
+// 	return n;
+// }
 
-void menu::customDisaster(){
-	if (rand()%1){
-		if (array[1] == "Water"){
-			if(rand()%2){
-			forestFire.description();
-			int n = getDisasterInput();
-				if(forestFire.isSolved(n))
-					cout<<"Great job! "<<endl;
-				else {
-					damage();
-					hp = return_hp();
-				}
-			}
-		}
-		if (array[5] == "Trees"){
-			if(rand()%2){
-			landSlide.description();
-			int n = getDisasterInput();
-				if(landSlide.isSolved(n))
-					cout<<"Excellent!"<<endl;
-				else {
-					damage();
-					hp = return_hp();
-				}
-			}
-		}
-		if (array[14] == "People"){
-			if(rand()%2){
-			people.description();
-			int n = getDisasterInput();
-				damage();
-					hp = return_hp();
-					realPeople.description();
-						n = getDisasterInput();
-						if(realPeople.isSolved())
-							cout<<"Wow!"<<endl;
-						else {
-							damage();
-							hp = return_hp();
-						}
-				else cout<<"what? how???"; //should'nt be possible
-			}
-	}
-	}
-}
+// void menu::customDisaster(){
+// 	if (rand()%1){
+// 		if (array[1] == "Water"){
+// 			if(rand()%2){
+// 			forestFire.description();
+// 			int n = getDisasterInput();
+// 				if(forestFire.isSolved(n))
+// 					cout<<"Great job! "<<endl;
+// 				else {
+// 					damage();
+// 					hp = return_hp();
+// 				}
+// 			}
+// 		}
+// 		if (array[5] == "Trees"){
+// 			if(rand()%2){
+// 			landSlide.description();
+// 			int n = getDisasterInput();
+// 				if(landSlide.isSolved(n))
+// 					cout<<"Excellent!"<<endl;
+// 				else {
+// 					damage();
+// 					hp = return_hp();
+// 				}
+// 			}
+// 		}
+// 		if (array[14] == "People"){
+// 			if(rand()%2){
+// 			people.description();
+// 			int n = getDisasterInput();
+// 				damage();
+// 					hp = return_hp();
+// 					realPeople.description();
+// 						n = getDisasterInput();
+// 						if(realPeople.isSolved())
+// 							cout<<"Wow!"<<endl;
+// 						else {
+// 							damage();
+// 							hp = return_hp();
+// 						}
+// 				else cout<<"what? how???"; //should'nt be possible
+// 			}
+// 	}
+// 	}
+// }
+
 // void menu::explore(){
 // 	description();
 //     char c;

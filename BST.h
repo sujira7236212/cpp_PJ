@@ -23,7 +23,7 @@ class BST{
         TreeNodePtr newNode(int item,string);
         TreeNodePtr findNode(TreeNodePtr,int);
         string findNodeName(TreeNodePtr,int);
-        int findNodeData(TreeNodePtr, string);
+        // int findNodeData(TreeNodePtr, string);
         TreeNodePtr insert(TreeNodePtr ,int ,string );
         int check(int ,int );
         string returnname(int);

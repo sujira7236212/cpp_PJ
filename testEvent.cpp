@@ -14,8 +14,9 @@
 using namespace std;
 
 int main(){
-    disaster fire("FO REHHHH", 1);
-    fire.description();
-    fire.isSolved(1);
+    event Explore;
+
+    Explore.randomEvent();
+    Explore.craftMenu();
     return 0;
 }
