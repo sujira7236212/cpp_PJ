@@ -1,9 +1,12 @@
+#ifndef CHALLENGE_H
+#define CHALLENGE_H
+
 #include "../BST.h"
 #include <iostream>
 #include <stack>
 #include <string>
-#ifndef CHALLENGE_H
-#define CHALLENGE_H
+#include <algorithm>
+
 
 class challenge: public BST{
     private:

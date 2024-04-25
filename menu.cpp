@@ -36,34 +36,9 @@ void menu::elementDisplay(int r){
 	
 }
 
-const string* menu::getArr(const string arr[]){
-	return arr;
+string* menu::getArr(){
+	return array;
 }
-
-// void menu::cleanDisplay(const string* arr[]) {
-// 	        cout<<endl<<"                \033[4mSustainable Energy Sources\033[0m "<<endl;
-//             cout<<"         -----------------------------------------"<<endl;
-// 	        cout<<"        |";
-
-// 			const std::string* string_array = arr[0];
-
-//             for(int i = 1; i < 4; i++){
-// 		    cout<<"\033[1;33m"<<setfill(' ')<<setw(12)<<string_array<<"\033[0m |";
-// 	        }
-// 	        cout<<endl<<"         -----------------------------------------"<<endl;
-//             }
-
-// void menu::specialDisplay(const string* arr[]) {
-//             cout<<"             -----------------------------------"<<endl;
-// 	        cout<<"    \033[4mSpecial\033[0m |";
-
-// 			const std::string* string_array = arr[0];
-
-// 	        for(int i = 0; i < 3; i++){
-// 		    cout<<"\033[1;33m"<<setfill(' ')<<setw(10)<<string_array<<"\033[0m |";
-// 	        }
-// 	        cout<<endl<<"             -----------------------------------"<<endl;
-//             }
  
 void menu::mainmenu(){
 	cout<<"==========================================================="<<endl<<endl<<endl;
@@ -146,6 +121,47 @@ int menu::loopmenu(int k, int result, DoublyLinkedList &L,int turn, event &exp){
 	} 
 }
 
+void menu::callDisaster(){
+
+	static std::default_random_engine generator(std::random_device{}());
+  	int n = generator() % 6;
+	switch (n)
+	{
+		case 1:
+			if (array[1] == "Water"){
+				Fire.description();
+				Fire.getInput();
+				Fire.isSolved();
+				Fire.ansDescription();
+			}
+			break;
+		case 2:
+			if (array[5] == "Trees"){
+				Land.description();
+				Land.getInput();
+				Land.isSolved();
+				Land.ansDescription();
+			}
+			break;
+		case 3:
+			if (array[14] == "People"){
+				People.description();
+				People.getInput();
+				People.isSolved();
+				People.ansDescription();
+				cout<<"Think again!"<<endl;
+				if(People.getString() != "PEOPLE"){
+					People.getInput();
+					People.isSolved();
+					People.ansDescription();
+				}
+			}
+			break;
+
+		default:
+			break;
+	}
+}
 
 
 

@@ -64,13 +64,7 @@ int BST::check(int i,int j){
             }
 }
 
-void BST::showHP(){
-	cout<<"\033[1m HP: \033[0m \033[31m";
-    for(int i=0 ; i<hp ; i++){
-        cout<<"❤ ";
-    }
-    cout<<"\033[0m"<<endl;
-}
+
 
 string BST::returnname(int add) {
     t = root;
@@ -113,22 +107,6 @@ string BST::findNodeName(TreeNodePtr root, int value){
     return current->name;   
 }
 
-// int BST::findNodeData(string n){
-//     if (root == nullptr) {
-//     return -1; // not found
-//   }
-
-//   if (root->name == n) {
-//     return root->data;
-//   }
-
-//   if (n < root->name) { 
-//     return findNodeData(root->left, n);
-//   } else {
-//     return findNodeData(root->right, n);
-//   }
-// }
-
 TreeNodePtr BST::search(TreeNodePtr root, int value) {
     if (root == NULL || root->data == value)
         return root;
@@ -140,7 +118,11 @@ TreeNodePtr BST::search(TreeNodePtr root, int value) {
 }
 
 void BST::showHP(){
-	cout<<"\033[1mHP: "<<hp<<"\033[0m"<<endl;
+	cout<<"\033[1m HP: \033[0m \033[31m";
+    for(int i=0 ; i<hp ; i++){
+        cout<<"❤ ";
+    }
+    cout<<"\033[0m"<<endl;
 }
 
 int BST::return_hp(){

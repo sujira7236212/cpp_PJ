@@ -19,8 +19,9 @@ int main() {
     char cont = 'y';
     int turn=1; //turn count
     a.mainmenu();
+    
     while (cont == 'y'|| cont == 'Y' && a.return_flag()<16 && result !=8){
-
+        
         system("clear");
         a.showHP();
         s1 = a.loopmenu(1,result,list,turn,explore);
@@ -33,6 +34,8 @@ int main() {
         cin.get();
         cin.get();
         system("clear");
+
+        a.callDisaster();
         
         explore.description();
         cout<<"         \" Press any key to to continue . . . \""<<endl<<endl;

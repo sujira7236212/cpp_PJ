@@ -21,7 +21,6 @@ class BST{
         ~BST();
         TreeNodePtr newNode(int item,string);
         TreeNodePtr findNode(TreeNodePtr,int);
-        void showHP();
         string findNodeName(TreeNodePtr,int);
         // int findNodeData(TreeNodePtr, string);
         TreeNodePtr insert(TreeNodePtr ,int ,string );

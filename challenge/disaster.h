@@ -1,25 +1,49 @@
-#include "challenge.h"
 #ifndef DISASTER_H
 #define DISASTER_H
 
-class disaster : public challenge { //choose elements
-    private:
-        bool ans;
-        int data_; //element data
-        string description_;
+#include "challenge.h"
+#include <cstring>
+
+class disaster { //choose elements
+    protected:
+        bool ans_ = true;
+        string answer_ = "NONE", input_;
         
     public:
-        int getDisasterInput();
-        // void customDisaster();
-        // disaster forestFire("Forest fire!", 1);
-        // disaster landSlide("The soil is degraded!", 5);
-        // disaster people("There's a mob between men and women. Shit's gettin real bloddy rn.", 0);
-        // disaster realPeople("Think again!", 14);            
-        disaster(const string& description, int data); //description of the event, answer element data
-        ~disaster() = default;
+        virtual void description();
+        void isSolved();
+        void getInput();
+        bool returnAns();
+};
+
+class forestFire : public disaster {
+    public:
+        forestFire(){
+            answer_ = "WATER";
+        }
         void description();
-        bool isSolved(int input);
-        
+        void ansDescription();
+};
+
+class landSlide : public disaster {
+    public:
+        landSlide(){
+            answer_ = "TREES";
+        }
+        void description();
+        void ansDescription();
+};
+
+class people : public disaster {
+    public:
+        people(){
+            answer_ = "PEOPLE";
+        }
+        void description();
+        void ansDescription();
+        string getString(){
+            return answer_;
+        }
 };
 
 #endif

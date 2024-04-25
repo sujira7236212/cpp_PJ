@@ -27,7 +27,7 @@ void event::randomEvent() {
 
   int n = generator() % 4;
 
-  switch (n=5) {
+  switch (n) {
     case 1: //waterwheel
       if (!used_options.count(1) && generator()%2 == 0) {
         specialElem(1);
