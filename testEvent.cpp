@@ -14,9 +14,12 @@
 using namespace std;
 
 int main(){
-    event Explore;
+    // event Explore;
 
-    Explore.randomEvent();
-    Explore.craftMenu();
+    // Explore.randomEvent();
+    // Explore.craftMenu();
+
+    popQuiz q;
+    q.randomquiz();
     return 0;
 }

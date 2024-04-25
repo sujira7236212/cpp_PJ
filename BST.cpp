@@ -56,17 +56,21 @@ int BST::check(int i,int j){
                 return 0;
             }
             else if((findNode(t,i)->data )== (findNode(t,j)->data)){
-                point += 20;
                 return findNode(t,i)->data;
             }
             else{
                 cout<<"Nothing Happen"<<endl;
-                point -= 10;
                 return 0;
             }
 }
 
-
+void BST::showHP(){
+	cout<<"\033[1m HP: \033[0m \033[31m";
+    for(int i=0 ; i<hp ; i++){
+        cout<<"❤ ";
+    }
+    cout<<"\033[0m"<<endl;
+}
 
 string BST::returnname(int add) {
     t = root;

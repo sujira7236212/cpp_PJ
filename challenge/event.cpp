@@ -11,8 +11,9 @@ void event::description() {
 }
 
 void event::addClean(int pos, string c){
-  cout<<"Right now, you've received "<<c
-    <<" making your city powered by clean energy. It looks like you're heading in the right direction!"<<endl;
+  cout<<"---------------------------------------------------------"<<endl;
+  cout<<"  Right now, you've received \033[1;32m"<<c
+      <<"\033[0m making your city \n  powered by clean energy.\n  It looks like you're heading in the right direction!"<<endl<<endl;
       clean[pos] = c;
 }
 void event::addSpecial(int pos, string spe){
@@ -26,7 +27,7 @@ void event::randomEvent() {
 
   int n = generator() % 4;
 
-  switch (n) {
+  switch (n=5) {
     case 1: //waterwheel
       if (!used_options.count(1) && generator()%2 == 0) {
         specialElem(1);
@@ -61,7 +62,14 @@ void event::randomEvent() {
       break;
 
     default:
+      cout<<endl<<" \033[35m--------------------- Q U I Z -------------------------\033[0m"<<endl<<endl;
       quiz.randomquiz();
+      if(!quiz.returnans()){
+      quiz.damage();
+      }
+      cout<<endl;
+      quiz.showHP();
+      cout<<endl<<" \033[35m------------------------------------------------------\033[0m"<<endl<<endl;
       break;
   }
 }
@@ -87,21 +95,33 @@ void event::craft(int blueprintNum){
       if (element1 == "WHEELS" && element2 == "WATER"){
         clean_ = "Water Wheel";
         addClean(0, clean_);
-      }else cout<<"          \033[1mNothing Happen!\033[0m"<<endl<<endl;
+        system("clear");
+      }else {
+      system("clear");
+      cout<<"          \033[1;35mNothing Happen!\033[0m"<<endl<<endl;
+      }
       break;
     
     case 2: //windmill
       if (element1 == "ROTOR" && element2 == "WOOD"){
       clean_ = "Wind Mill";
       addClean(1, clean_);
-      }else cout<<"          \033[1mNothing Happen!\033[0m"<<endl<<endl;
+      system("clear");
+      }else {
+      system("clear");
+      cout<<"          \033[1;35mNothing Happen!\033[0m"<<endl<<endl;
+      }
       break;
 
     case 3: //solarpanel
       if (element1 == "SILICON" && element2 == "METAL"){
       clean_ = "Solar Panel";
       addClean(2, clean_);
-      }else cout<<"          \033[1mNothing Happen!\033[0m"<<endl<<endl;
+      system("clear");
+      }else {
+      system("clear");
+      cout<<"          \033[1;35mNothing Happen!\033[0m"<<endl<<endl;
+      }
       break;
     
     default:

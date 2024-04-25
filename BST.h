@@ -13,8 +13,7 @@ struct TreeNode{
 typedef TreeNode* TreeNodePtr;
 class BST{
     private:
-        int point;
-        int hp = 3;
+        int hp = 5;
         TreeNodePtr root = NULL;
     public:
     TreeNodePtr t;
@@ -22,6 +21,7 @@ class BST{
         ~BST();
         TreeNodePtr newNode(int item,string);
         TreeNodePtr findNode(TreeNodePtr,int);
+        void showHP();
         string findNodeName(TreeNodePtr,int);
         // int findNodeData(TreeNodePtr, string);
         TreeNodePtr insert(TreeNodePtr ,int ,string );

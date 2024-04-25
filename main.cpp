@@ -14,8 +14,6 @@ int main() {
     DoublyLinkedList list;
     menu a;
     event explore;
-    // a.cleanArrayPtr = a.getArr(explore.clean[4]);
-    // a.specialArrayPtr = a.getArr(explore.special[4]);
     int result = 0;
     int s1, s2;
     char cont = 'y';
@@ -24,8 +22,10 @@ int main() {
     while (cont == 'y'|| cont == 'Y' && a.return_flag()<16 && result !=8){
 
         system("clear");
+        a.showHP();
         s1 = a.loopmenu(1,result,list,turn,explore);
         system("clear");
+        a.showHP();
         s2 = a.loopmenu(2,result,list,turn,explore);/////
         result = a.check(s1, s2);
         a.addmenu(result,list);
@@ -48,16 +48,16 @@ int main() {
             cin.get();
             exploreChoice == 'n';
         }
-
+        cout<<"\033[1;47m |  Inventory  | \033[0m"<<endl;
         explore.cleanDisplay();
         explore.specialDisplay();
 
-        cout<<"Continue? (Y/N): ";
+        cout<<endl<<"\033[32m Y : Continue your journey\033[0m |\033[31m N : Give up \033[0m : ";
         cin>>cont;
         
         turn++;
     }
     a.gameexit();
-    
+    cin.get();
     return 0;
 }

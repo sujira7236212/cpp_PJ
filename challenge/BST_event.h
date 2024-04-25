@@ -12,7 +12,7 @@ public:
 void waterWheelC::blueprint(){
     blueprintGet = true;
 
-  cout<<endl<<"  You recieved a "<<"Water Wheel"<<" Crafting Blueprint!"<<endl;
+  cout<<endl<<"  You recieved a \033[34mWater Wheel\033[0m Crafting Blueprint!"<<endl;
 	cout<<endl<<"  \033[44m-------------------------------------------------------\033[0m";
 	cout<<endl<<"  \033[44m                      \033[1;37mBLUEPRINT\033[0m\033[44m                        \033[0m";
   cout<<endl<<"  \033[44m                                                       \033[0m";
@@ -22,8 +22,8 @@ void waterWheelC::blueprint(){
   cout<<endl<<"  \033[44m-------------------------------------------------------\033[0m"<<endl<<endl;
 }
 void waterWheelC::blueprintAvailable(){
-  if (!blueprintGet) cout<<"This blueprint is unavailable. Please choose the available option. ";
-  else cout << "You chose blueprint Water Wheel." << endl;
+  if (!blueprintGet) cout<<" This blueprint is unavailable. Please choose the available option. ";
+  else cout << " You chose blueprint Water Wheel." << endl;
 }
 
 
@@ -37,7 +37,7 @@ public:
 };
 void windMillC::blueprint(){
     blueprintGet = true;
-  cout<<endl<<"  You recieved a "<<"Windmill"<<" Crafting Blueprint!"<<endl;
+  cout<<endl<<"  You recieved a \033[34mWindmill\033[0m Crafting Blueprint!"<<endl;
 	cout<<endl<<"  \033[44m-------------------------------------------------------\033[0m";
 	cout<<endl<<"  \033[44m                      \033[1;37mBLUEPRINT\033[0m\033[44m                        \033[0m";
   cout<<endl<<"  \033[44m                                                       \033[0m";
@@ -47,8 +47,8 @@ void windMillC::blueprint(){
   cout<<endl<<"  \033[44m-------------------------------------------------------\033[0m"<<endl<<endl;
 }
 void windMillC::blueprintAvailable(){
-  if (!blueprintGet) cout<<"This blueprint is unavailable. Please choose the available option. ";
-  else cout << "You chose blueprint Wind Mill." << endl;
+  if (!blueprintGet) cout<<" This blueprint is unavailable. Please choose the available option. ";
+  else cout << " You chose blueprint Wind Mill." << endl;
 }
 
 
@@ -63,7 +63,7 @@ public:
 
 void solarPanelC::blueprint(){
     blueprintGet = true;
-  cout<<endl<<"  You recieved a "<<"Solar Panel"<<" Crafting Blueprint!"<<endl;
+  cout<<endl<<"  You recieved a \033[34mSolar Panel\033[0m Crafting Blueprint!"<<endl;
 	cout<<endl<<"  \033[44m-------------------------------------------------------\033[0m";
 	cout<<endl<<"  \033[44m                      \033[1;37mBLUEPRINT\033[0m\033[44m                        \033[0m";
   cout<<endl<<"  \033[44m                                                       \033[0m";
@@ -73,9 +73,9 @@ void solarPanelC::blueprint(){
   cout<<endl<<"  \033[44m-------------------------------------------------------\033[0m"<<endl<<endl;
 }
 void solarPanelC::blueprintAvailable(){
-  if (!blueprintGet) cout<<"This blueprint is unavailable. Please choose the available option. "<<endl;
+  if (!blueprintGet) cout<<" This blueprint is unavailable. Please choose the available option. "<<endl;
   else {
-    cout << "You chose blueprint Solar Panel." << endl;
+    cout << " You chose blueprint Solar Panel." << endl;
   }
 }
 

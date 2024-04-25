@@ -21,6 +21,9 @@ class popQuiz : public challenge{ //fun quiz
         bool quiz1();
         bool quiz2();
         bool quiz3();
+        bool quiz4();
+        bool quiz5();
+        bool quiz6();
         void randomquiz();
         bool returnans();
 };
