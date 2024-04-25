@@ -27,7 +27,7 @@ public:
 	        cout<<endl<<"               \033[4mSustainable Energy Sources\033[0m "<<endl;
             cout<<"        -----------------------------------------"<<endl;
 	        cout<<"       |";
-            for(int i = 1; i < 4; i++){
+            for(int i = 0; i < 3; i++){
 		    cout<<"\033[1;33m"<<setfill(' ')<<setw(12)<<clean[i]<<"\033[0m |";
 	        }
 	        cout<<endl<<"        -----------------------------------------"<<endl;

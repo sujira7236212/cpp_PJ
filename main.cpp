@@ -32,16 +32,17 @@ int main() {
         result = a.check(s1, s2);
         a.addmenu(result,list);
         a.newele(result);
-        cin.get();
-        cin.get();
+        cin.ignore(10, '\n');
         system("clear");
 
         a.callDisaster();
-        
+
         explore.description();
         cout<<"         \" Press any key to to continue . . . \""<<endl<<endl;
-        cin.get();
+
+        cin.ignore(10, '\n');
         system("clear");
+
         explore.description();
         char exploreChoice = '0';
         cout<<" Do you wish to explore? (Y/N): ";
@@ -51,7 +52,10 @@ int main() {
             explore.randomEvent();
             cin.get();
             exploreChoice == 'n';
-        }      
+        }  
+        
+        currenthp = a.return_mainhp();  
+        if(currenthp < 0) break;  
         cout<<"  -------------------\033[1m|  Inventory  |\033[0m--------------------- "<<endl;                    
         explore.cleanDisplay();
         explore.specialDisplay();
@@ -59,7 +63,7 @@ int main() {
         cout<<endl<<"\033[32m   Y : Continue your journey\033[0m |\033[31m N : Give up \033[0m : ";
         cin>>cont;
         
-        currenthp = a.return_mainhp();
+        
         turn++;
     }
 
