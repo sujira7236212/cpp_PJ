@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <unistd.h>
 #include "menu.h"
 #include "BST.h"
 #include "menu.cpp"
@@ -55,7 +56,10 @@ int main() {
         }  
         
         currenthp = a.return_mainhp();  
-        if(currenthp < 0) break;  
+        if(currenthp < 0) break; 
+
+        usleep(1000000);
+
         cout<<"  -------------------\033[1m|  Inventory  |\033[0m--------------------- "<<endl;                    
         explore.cleanDisplay();
         explore.specialDisplay();
