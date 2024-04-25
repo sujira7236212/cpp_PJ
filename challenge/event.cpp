@@ -3,15 +3,15 @@
 
 void event::description() {
   
-    cout<<"---------------------------------------------------------"<<endl;
-    cout<<"                  \033[1;4mEXPEDITION PLAN\033[0m"<<endl<<endl;
+    cout<<"-----------------------------------------------------------"<<endl;
+    cout<<"                     \033[1;4mEXPEDITION PLAN\033[0m"<<endl<<endl;
     cout<<" Go on an exploration for \033[1mSustainable Energy Sources\033[0m!"<<endl
         <<" You'll have chances to find \033[34mblueprints\033[0m along with many "<<endl 
         <<" other \033[33mspecial materials\033[0m!"<<endl<<endl;
 }
 
 void event::addClean(int pos, string c){
-  cout<<"---------------------------------------------------------"<<endl;
+  cout<<"-----------------------------------------------------------"<<endl;
   cout<<"  Right now, you've received \033[1;32m"<<c
       <<"\033[0m making your city \n  powered by clean energy.\n  It looks like you're heading in the right direction!"<<endl<<endl;
       clean[pos] = c;
@@ -62,14 +62,14 @@ void event::randomEvent() {
       break;
 
     default:
-      cout<<endl<<" \033[35m--------------------- Q U I Z -------------------------\033[0m"<<endl<<endl;
+      cout<<endl<<" \033[35m----------------------- Q U I Z -------------------------\033[0m"<<endl<<endl;
       quiz.randomquiz();
       if(!quiz.returnans()){
       quiz.damage();
       }
       cout<<endl;
       quiz.showHP();
-      cout<<endl<<" \033[35m------------------------------------------------------\033[0m"<<endl<<endl;
+      cout<<endl<<" \033[35m---------------------------------------------------------\033[0m"<<endl<<endl;
       break;
   }
 }
@@ -98,7 +98,7 @@ void event::craft(int blueprintNum){
         system("clear");
       }else {
       system("clear");
-      cout<<"          \033[1;35mNothing Happen!\033[0m"<<endl<<endl;
+      cout<<"              \033[1;35mNothing Happen!\033[0m"<<endl<<endl;
       }
       break;
     
@@ -109,7 +109,7 @@ void event::craft(int blueprintNum){
       system("clear");
       }else {
       system("clear");
-      cout<<"          \033[1;35mNothing Happen!\033[0m"<<endl<<endl;
+      cout<<"              \033[1;35mNothing Happen!\033[0m"<<endl<<endl;
       }
       break;
 
@@ -120,12 +120,12 @@ void event::craft(int blueprintNum){
       system("clear");
       }else {
       system("clear");
-      cout<<"          \033[1;35mNothing Happen!\033[0m"<<endl<<endl;
+      cout<<"              \033[1;35mNothing Happen!\033[0m"<<endl<<endl;
       }
       break;
     
     default:
-    cout<<"          \033[1mNothing Happen!\033[0m"<<endl<<endl;
+    cout<<"              \033[1mNothing Happen!\033[0m"<<endl<<endl;
       break;
     }
 }
@@ -165,8 +165,20 @@ void event::specialElem(int n){ //return to add element in menu
     }
   cout<<endl<<"         ----------------------------------------"<<endl;
 	cout<<"        |  Congratulations! You gain \033[38;5;220m"<<setfill(' ')<<setw(9)<<element<<"\033[0m"<<"!  |";
-	cout<<endl<<"         ----------------------------------------"<<endl;
+	cout<<endl<<"         ----------------------------------------"<<endl<<endl;
 }
 
-
+void event::sustainrate(){
+            string chr;
+            int tt=0;
+            for(int i=0 ; i<4 ; i++){
+                chr = clean[i];
+                transform(chr.begin(), chr.end(), chr.begin(), ::toupper);
+                if(chr=="WATER WHEEL" || chr =="WIND MILL" || chr =="SOLAR PANEL") tt++;
+            }
+            if(tt==3) cout<<endl<<"                 \033[1mSustainability Rate: \033[1;34m100%\033[0m"<<endl;
+            else if(tt==2) cout<<endl<<"                 \033[1mSustainability Rate: \033[1;32m66%\033[0m"<<endl;
+            else if(tt==1) cout<<endl<<"                 \033[1mSustainability Rate: \033[1;33m33%\033[0m"<<endl;
+            else cout<<endl<<"                 \033[1mSustainability Rate: \033[1;31m00%\033[0m"<<endl;
+        }
 

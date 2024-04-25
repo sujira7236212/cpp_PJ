@@ -3,6 +3,7 @@
 #define BST_H
 #include <string>
 using namespace std;
+
 struct TreeNode{
         int data;
         string name;
@@ -13,7 +14,6 @@ struct TreeNode{
 typedef TreeNode* TreeNodePtr;
 class BST{
     private:
-        int hp = 5;
         TreeNodePtr root = NULL;
     public:
     TreeNodePtr t;
@@ -27,7 +27,7 @@ class BST{
         int check(int ,int );
         string returnname(int);
         void showHP();
-        int return_hp();
+        int return_bsthp();
         void damage();
         TreeNodePtr search(TreeNodePtr,int);
         //string returnname(int);

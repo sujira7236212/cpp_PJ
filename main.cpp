@@ -14,13 +14,14 @@ int main() {
     DoublyLinkedList list;
     menu a;
     event explore;
+    int currenthp = 5;//hp flag
     int result = 0;
     int s1, s2;
     char cont = 'y';
     int turn=1; //turn count
     a.mainmenu();
     
-    while (cont == 'y'|| cont == 'Y' && a.return_flag()<16 && result !=8){
+    while ((cont == 'y'|| cont == 'Y') && a.return_flag()<16 && result !=8 && currenthp>0){
         
         system("clear");
         a.showHP();
@@ -43,24 +44,26 @@ int main() {
         system("clear");
         explore.description();
         char exploreChoice = '0';
-        cout<<"Do you wish to explore? (Y/N): ";
+        cout<<" Do you wish to explore? (Y/N): ";
         cin>>exploreChoice;
 
         if(exploreChoice =='y' || exploreChoice == 'Y'){
             explore.randomEvent();
             cin.get();
             exploreChoice == 'n';
-        }
-        cout<<"\033[1;47m |  Inventory  | \033[0m"<<endl;
+        }      
+        cout<<"  -------------------\033[1m|  Inventory  |\033[0m--------------------- "<<endl;                    
         explore.cleanDisplay();
         explore.specialDisplay();
 
-        cout<<endl<<"\033[32m Y : Continue your journey\033[0m |\033[31m N : Give up \033[0m : ";
+        cout<<endl<<"\033[32m   Y : Continue your journey\033[0m |\033[31m N : Give up \033[0m : ";
         cin>>cont;
         
+        currenthp = a.return_mainhp();
         turn++;
     }
-    a.gameexit();
+
+    a.gameexit(explore);
     cin.get();
     return 0;
 }

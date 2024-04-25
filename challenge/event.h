@@ -33,12 +33,12 @@ public:
 	        cout<<endl<<"        -----------------------------------------"<<endl;
             }
         void specialDisplay() {
-            cout<<"             -----------------------------------"<<endl;
-	        cout<<"    \033[4mSpecial\033[0m |";
+            cout<<"           -----------------------------------"<<endl;
+	        cout<<"  \033[4mSpecial\033[0m |";
 	        for(int i = 0; i < 3; i++){
 		    cout<<"\033[1;33m"<<setfill(' ')<<setw(10)<<special[i]<<"\033[0m |";
 	        }
-	        cout<<endl<<"             -----------------------------------"<<endl;
+	        cout<<endl<<"           -----------------------------------"<<endl;
             }
 
         void addClean(int pos, string c);
@@ -48,7 +48,7 @@ public:
         void specialElem(int n); //print element in special array
         void craft(int blueprintNum); //print element in clean array
         
-        
+        void sustainrate();
 };
 
 #endif

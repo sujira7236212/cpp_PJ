@@ -1,6 +1,6 @@
 #include <iostream>
 #include "BST.h"
-
+int hp = 5;
 TreeNodePtr BST::newNode(int item,string n)
 {
     TreeNodePtr temp
@@ -52,14 +52,12 @@ BST::~BST(){
 int BST::check(int i,int j){
     t = root;
             if((search(t,i)) == (search(t,j))){
-                cout<<"Nothing Happen"<<endl;
                 return 0;
             }
             else if((findNode(t,i)->data )== (findNode(t,j)->data)){
                 return findNode(t,i)->data;
             }
             else{
-                cout<<"Nothing Happen"<<endl;
                 return 0;
             }
 }
@@ -125,9 +123,8 @@ void BST::showHP(){
     cout<<"\033[0m"<<endl;
 }
 
-int BST::return_hp(){
-    cout<<"You have "<<hp<<"left."<<endl;
-    return hp;
+int BST::return_bsthp(){
+	return hp;
 }
 
 void BST::damage(){

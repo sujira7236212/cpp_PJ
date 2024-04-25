@@ -46,7 +46,9 @@ void menu::mainmenu(){
 	cout<<"               \" Press any key to to enter \""<<endl<<endl<<endl;
 	cout<<"      \033[1;31m⚘   \033[1;33m⚘   \033[1;36m⚘   \033[1;34m⚘                     \033[1;31m⚘   \033[1;33m⚘   \033[1;36m⚘   \033[1;34m⚘\033[0m"<<endl<<endl;
 	cout<<"==========================================================="<<endl<<endl;
-	cin.get();
+	cin.ignore(100, '\n');
+	system("clear");
+	
 }
 
  void menu::gamemenu(int i, int result, DoublyLinkedList &L, event &exp){
@@ -70,9 +72,12 @@ void menu::addmenu(int add, DoublyLinkedList &L){
         array[0] = "Nothing Happen";
     }
 	else{
-		array[add] = returnname(add);
+		if(array[add] != returnname(add) ){
+			array[add] = returnname(add);
+			flag++;
+		}
 		L.insert(array[add]);
-		flag++;
+		
 	}
 	
 }
@@ -81,12 +86,36 @@ int menu::return_flag(){
 	return flag;
 }
 
-void menu::gameexit(){
-	char choice;
-	cout<<endl<<"  -------------------------------------------------------"<<endl;
-	cout<<endl<<"                         THE END !                       "<<endl;
+int menu::return_mainhp(){
+	int hpp = return_bsthp();
+	return hpp;
+}
+
+void menu::gameexit(event &e){
+	if(return_bsthp()<0){
+	cout<<endl<<"==========================================================="<<endl;
+	cout<<endl<<"                       \033[1mZero Hearts\033[0m"<<endl;
+	cout<<endl<<"       You Failed to build up your Sustainable City."<<endl;
+	cout<<endl<<"                       \" TOO BAD \""<<endl;
+	}
+	else if(return_flag()>15){
+	cout<<endl<<"==========================================================="<<endl;
+	cout<<endl<<"                      \033[1mCONGRATULATIONS\033[0m"<<endl;
+	cout<<endl<<"       You successfully built your Sustainable City."<<endl;
+	cout<<endl<<"                      \" GREAT JOB \""<<endl;	
+	}
+	else{
+	cout<<endl<<"==========================================================="<<endl;
+	cout<<endl<<"                    \033[1mPLEASE DON'T GO ...\033[0m"<<endl;
+	cout<<endl<<"                   You decided to leave.";
+	cout<<endl<<"                 \" JUST LIKE MY PARENTS \"";		
+	cout<<endl<<"                   - Someone, probably"<<endl;
+	}
+	e.sustainrate();
+	cout<<endl<<"-----------------------------------------------------------"<<endl;
+	cout<<endl<<"                         \033[1mTHE END !\033[0m                       "<<endl;
 	cout<<endl<<"                \" Press any key to to exit \""<<endl;
-	cout<<endl<<"  -------------------------------------------------------"<<endl;
+	cout<<endl<<"==========================================================="<<endl;
 	cin.get();
 }
 
@@ -95,6 +124,11 @@ void menu::newele(int result){
 	cout<<endl<<"         ----------------------------------------"<<endl;
 	cout<<"        |  Congratulations! You Made \033[38;5;220m"<<setfill(' ')<<setw(9)<<array[result]<<"\033[0m"<<"!  |";
 	cout<<endl<<"         ----------------------------------------"<<endl;
+	}
+	else{
+	cout<<endl<<"         ------------------------------------------"<<endl;
+	cout<<"        |  What a Bummer! You Made \033[1;31mNothing Happen\033[0m"<<"!  |";
+	cout<<endl<<"         ------------------------------------------"<<endl;	
 	}
 }
 

@@ -23,7 +23,7 @@ class menu :public BST, public DoublyLinkedList, public event, public disaster {
     menu();
     ~menu();
     void newele(int);
-    void gameexit();
+    void gameexit(event &);
     void elementDisplay(int);
     void mainmenu();
     string* getArr();
@@ -31,6 +31,7 @@ class menu :public BST, public DoublyLinkedList, public event, public disaster {
     int loopmenu(int,int,DoublyLinkedList &,int, event &);
     void addmenu(int,DoublyLinkedList &);
 
+    int return_mainhp();
     int return_flag();
 
     void callDisaster();
