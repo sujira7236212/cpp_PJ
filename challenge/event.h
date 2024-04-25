@@ -23,23 +23,8 @@ protected:
 
 public:
 
-        void cleanDisplay() {
-	        cout<<endl<<"               \033[4mSustainable Energy Sources\033[0m "<<endl;
-            cout<<"        -----------------------------------------"<<endl;
-	        cout<<"       |";
-            for(int i = 0; i < 3; i++){
-		    cout<<"\033[1;33m"<<setfill(' ')<<setw(12)<<clean[i]<<"\033[0m |";
-	        }
-	        cout<<endl<<"        -----------------------------------------"<<endl;
-            }
-        void specialDisplay() {
-            cout<<"           -----------------------------------"<<endl;
-	        cout<<"  \033[4mSpecial\033[0m |";
-	        for(int i = 0; i < 3; i++){
-		    cout<<"\033[1;33m"<<setfill(' ')<<setw(10)<<special[i]<<"\033[0m |";
-	        }
-	        cout<<endl<<"           -----------------------------------"<<endl;
-            }
+        void cleanDisplay();
+        void specialDisplay();
 
         void addClean(int pos, string c);
         void addSpecial(int pos, string spe);

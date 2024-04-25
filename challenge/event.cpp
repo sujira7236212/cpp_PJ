@@ -10,6 +10,25 @@ void event::description() {
         <<" other \033[33mspecial materials\033[0m!"<<endl<<endl;
 }
 
+void event::cleanDisplay() {
+    cout<<endl<<"               \033[4mSustainable Energy Sources\033[0m "<<endl;
+    cout<<"        -----------------------------------------"<<endl;
+    cout<<"       |";
+    for(int i = 0; i < 3; i++){
+    cout<<"\033[1;33m"<<setfill(' ')<<setw(12)<<clean[i]<<"\033[0m |";
+    }
+    cout<<endl<<"        -----------------------------------------"<<endl;
+}
+
+void event::specialDisplay() {
+    cout<<"           -----------------------------------"<<endl;
+    cout<<"  \033[4mSpecial\033[0m |";
+    for(int i = 0; i < 3; i++){
+    cout<<"\033[1;33m"<<setfill(' ')<<setw(10)<<special[i]<<"\033[0m |";
+    }
+    cout<<endl<<"           -----------------------------------"<<endl;
+}
+
 void event::addClean(int pos, string c){
   cout<<"-----------------------------------------------------------"<<endl;
   cout<<"  Right now, you've received \033[1;32m"<<c

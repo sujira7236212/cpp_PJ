@@ -16,7 +16,7 @@ class challenge: public BST{
         bool random(int n);
 };
 
-class popQuiz : public challenge{ //fun quiz
+class popQuiz : public challenge{
         char input;
         bool ans = false;
     public:
@@ -30,13 +30,6 @@ class popQuiz : public challenge{ //fun quiz
         void randomquiz();
         bool returnans();
 };
-
-// class event : public challenge { //basicly minigame
-// public:
-//     void description() const override;
-//     bool random() override; //no randomizetion whatsoever
-//     void play();
-// };
 
 
 #endif

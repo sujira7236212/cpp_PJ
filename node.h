@@ -15,7 +15,28 @@ private:
 
 public:
     DoublyLinkedList();
-    void insert(string element) {
+    void insert(string element);
+    void print();
+    void selectionSort();
+
+private:
+    void swapNodes(Node* node1, Node* node2);
+};
+
+DoublyLinkedList::DoublyLinkedList() {
+    head = NULL;
+    tail = NULL;
+    insert("Water");
+    insert("Land");
+    insert("Trees");
+    insert("Animals");
+    insert("Wood");
+    insert("Metal");
+	insert("Male");
+	insert("Female");
+}
+
+    void DoublyLinkedList::insert(string element) {
         Node* newNode = new Node(element);
         if (!head) {
             head = tail = newNode;
@@ -26,7 +47,7 @@ public:
         }
     }
 
-    void print() {
+    void DoublyLinkedList::print() {
         int i=1;
         Node* current = head;
         while (current) {
@@ -38,7 +59,7 @@ public:
         cout <<endl;
     }
 
-    void selectionSort() {
+    void DoublyLinkedList::selectionSort() {
         if (!head || !head->next) return;
 
         Node* i = head;
@@ -58,24 +79,9 @@ public:
         }
     }
 
-private:
-    void swapNodes(Node* node1, Node* node2) {
+    void DoublyLinkedList::swapNodes(Node* node1, Node* node2) {
         if (node1 == node2) return;
         string temp = node1->element;
         node1->element = node2->element;
         node2->element = temp;
     }
-};
-
-DoublyLinkedList::DoublyLinkedList() {
-    head = NULL;
-    tail = NULL;
-    insert("Water");
-    insert("Land");
-    insert("Trees");
-    insert("Animals");
-    insert("Wood");
-    insert("Metal");
-	insert("Male");
-	insert("Female");
-}
