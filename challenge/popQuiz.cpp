@@ -17,6 +17,7 @@ bool popQuiz::quiz1(){
     cout<<"  \033[35mc.)\033[0m Prof. Tanasanee Phienthrakul"<<endl;
     cout<<"  \033[35md.)\033[0m Golden Prof. Tanasanee Phienthrakul"<<endl;
     getInput();
+    system("clear");
 
     if(input=='a' || input=='b' || input=='c'|| input=='d'){
         ans = true;
@@ -36,6 +37,8 @@ bool popQuiz::quiz2(){
     cout<<"\033[35mc\033[0m.) 18"<<endl;
     cout<<"\033[35md\033[0m.) 19"<<endl;
     getInput();
+    system("clear");
+
     if(input=='b'){
         ans = true;
         cout<<endl<<" \033[32mYou're correct!\033[0m Thanks for the excuse of putting "<<endl<<" SDGs 4: Education in our objective. \033[31mXOXO\033[0m"<<endl;
@@ -53,6 +56,8 @@ bool popQuiz::quiz3(){
     cout<<"\033[35ma.)\033[0m Prof. Tanasanee Phienthrakul"<<endl;
     cout<<"\033[35mb.)\033[0m Prof. Mingmanas Sivaraksa"<<endl;
     getInput();
+    system("clear");
+    
     if(input=='a' || input=='b'){
         ans = false;
         cout<<endl<<" How could you?! We all know they're both awesome!"<<endl;

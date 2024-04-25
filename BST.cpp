@@ -139,6 +139,10 @@ TreeNodePtr BST::search(TreeNodePtr root, int value) {
     return search(root->left, value);
 }
 
+void BST::showHP(){
+	cout<<"\033[1mHP: "<<hp<<"\033[0m"<<endl;
+}
+
 int BST::return_hp(){
     cout<<"You have "<<hp<<"left."<<endl;
     return hp;

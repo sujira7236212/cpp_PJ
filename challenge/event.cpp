@@ -125,7 +125,7 @@ void event::craft(int blueprintNum){
       break;
     
     default:
-    cout<<"Nothing Happen!"<<endl;
+    cout<<"          \033[1mNothing Happen!\033[0m"<<endl<<endl;
       break;
     }
 }
