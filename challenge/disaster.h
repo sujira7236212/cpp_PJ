@@ -11,8 +11,8 @@ class disaster { //choose elements
         
     public:
         virtual void description();
-        void isSolved();
         void getInput();
+        void isSolved();
         bool returnAns();
 };
 

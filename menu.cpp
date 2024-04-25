@@ -159,42 +159,50 @@ void menu::callDisaster(){
 
 	static std::default_random_engine generator(std::random_device{}());
   	int n = generator() % 6;
+	bool t=true;
 	switch (n)
 	{
 		case 1:
 			if (array[1] == "Water"){
+				elementDisplay(17);
 				Fire.description();
 				Fire.getInput();
 				Fire.isSolved();
 				Fire.ansDescription();
+				t = Fire.returnAns();
 			}
 			break;
 		case 2:
 			if (array[5] == "Trees"){
+				elementDisplay(17);
 				Land.description();
 				Land.getInput();
 				Land.isSolved();
 				Land.ansDescription();
+				t = Land.returnAns();
 			}
 			break;
 		case 3:
 			if (array[14] == "People"){
+				elementDisplay(17);
 				People.description();
 				People.getInput();
 				People.isSolved();
 				People.ansDescription();
-				cout<<"Think again!"<<endl;
-				if(People.getString() != "PEOPLE"){
-					People.getInput();
-					People.isSolved();
-					People.ansDescription();
-				}
+				t = People.returnAns();
 			}
 			break;
 
 		default:
+			t=true;
 			break;
 	}
+	if(!t){
+		damage();
+	} if(n<=3) showHP();
+	cin.ignore(100, '\n');
+	cin.get();
+	system("clear");
 }
 
 

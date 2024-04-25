@@ -99,17 +99,11 @@ bool popQuiz::quiz5(){
     cout<<"\033[35mb.)\033[0m Biomass Energy"<<endl;
     cout<<"\033[35mc.)\033[0m Coal"<<endl;
     getInput();
-    if(input=='b'){
+    if(input =='a' || input=='b'){
         ans = false;
         cout<<endl<<" NO! "<<endl; 
 	    cout<<" It is energy produced from the decomposition of biomass"<<endl;
         cout<<" which does not produce pollutants."<<endl;
-    }
-    else if(input=='a'){
-        ans = false;
-        cout<<endl<<"  NO YOU CAN DO SOMETHING!"<<endl; 
-	    cout<<" There are various ways we can address this issue ourselves"<<endl;
-        cout<<" including advocating for solutions at the root cause."<<endl;
     }
     else if(input=='c'){
         cout<<endl<<" CORRECT! "<<endl;

@@ -38,10 +38,7 @@ void forestFire::ansDescription(){
   if (ans_){
   cout<<endl<<"  Great job! Choosing water to help extinguish the fire was effective! \n  Keep trying to successfully complete the remaining missions."<<endl;
   } else
-  cout<<endl<<"  BRO, NO. "<<endl;
-  cin.ignore(100, '\n');
-  cin.get();
-  system("clear");
+  cout<<endl<<"  You monster! Those poor trees and animals are gone now thanks to you!  "<<endl;
 }
 
 void landSlide::description(){
@@ -59,9 +56,7 @@ void landSlide::ansDescription(){
   if (ans_){
   cout<<endl<<"  Excellent! Planting trees helps restore soil quality. \n  Keep striving to build a sustainable and livable city."<<endl;
   } else;
-  cin.ignore(100, '\n');
-  cin.get();
-  system("clear");
+  cout<<endl<<"  The soil turns so dry there was no food for weeks. \n  How starving felt like?  "<<endl;
 }
 
 
@@ -83,9 +78,6 @@ void people::ansDescription(){
   if (ans_){
   cout<<endl<<"  Brilliant! If we let the people govern together, \n  both sides could express their opinions. Though eventually \n  one might win over, at least they can go with a fight!"<<endl;
   } else;
-  cout<<endl<<"  Yeah, no. looks like the power is still one-sided."<<endl;
-  cin.ignore(100, '\n');
-  cin.get();
-  system("clear");
+  cout<<endl<<"  Yeah, no. looks like the power is still one-sided.  \n  Try again next time!  "<<endl;
 }
 
