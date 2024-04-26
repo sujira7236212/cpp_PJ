@@ -36,9 +36,11 @@ void forestFire::description(){
 }
 void forestFire::ansDescription(){
   if (ans_){
-  cout<<endl<<"  Great job! Choosing water to help extinguish the fire was effective! \n  Keep trying to successfully complete the remaining missions."<<endl;
-  } else
-  cout<<endl<<"  You monster! Those poor trees and animals are gone now thanks to you!  "<<endl;
+  cout<<endl<<"  \033[34mGreat job!\033[0m Choosing water to help extinguish the fire was effective! \n  Keep trying to successfully complete the remaining missions."<<endl;
+  } else cout<<endl<<"  \033[35mYou monster!\033[0m Those poor trees and animals are gone now thanks to you!  "<<endl;
+  cin.ignore(100, '\n');
+  cin.get();
+  system("clear");
 }
 
 void landSlide::description(){
@@ -54,9 +56,11 @@ void landSlide::description(){
 }
 void landSlide::ansDescription(){
   if (ans_){
-  cout<<endl<<"  Excellent! Planting trees helps restore soil quality. \n  Keep striving to build a sustainable and livable city."<<endl;
-  } else;
-  cout<<endl<<"  The soil turns so dry there was no food for weeks. \n  How starving felt like?  "<<endl;
+  cout<<endl<<"  \033[34mExcellent!\033[0m Planting trees helps restore soil quality. \n  Keep striving to build a sustainable and livable city."<<endl;
+  } else cout<<endl<<"  The soil turns so dry there was no food for weeks. \n  \033[35mHow does starving feels like\033[0m?  "<<endl;
+  cin.ignore(100, '\n');
+  cin.get();
+  system("clear");
 }
 
 
@@ -76,8 +80,10 @@ void people::description(){
 }
 void people::ansDescription(){
   if (ans_){
-  cout<<endl<<"  Brilliant! If we let the people govern together, \n  both sides could express their opinions. Though eventually \n  one might win over, at least they can go with a fight!"<<endl;
-  } else;
-  cout<<endl<<"  Yeah, no. looks like the power is still one-sided.  \n  Try again next time!  "<<endl;
+  cout<<endl<<"  \033[34mBrilliant!\033[0m If we let the people govern together, \n  both sides could express their opinions. Though eventually \n  one might win over, at least they can go with a fight!"<<endl;
+  } else cout<<endl<<"  Yeah, no. looks like the power is still one-sided.  \n  \033[35mThings got physical\033[0m, you wouldn't want another civil war right?  "<<endl;
+  cin.ignore(100, '\n');
+  cin.get();
+  system("clear");
 }
 

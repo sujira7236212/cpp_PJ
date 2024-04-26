@@ -33,13 +33,14 @@ int main() {
         result = a.check(s1, s2);
         a.addmenu(result,list);
         a.newele(result);
-        cin.ignore(10, '\n');
+        cin.ignore(100, '\n');
+        // cin.get();
         system("clear");
 
         a.callDisaster();
 
         explore.description();
-        cout<<"         \" Press any key to to continue . . . \""<<endl<<endl;
+        cout<<"            \" Press Enter to continue . . . \""<<endl<<endl;
 
         cin.ignore(10, '\n');
         system("clear");
@@ -58,7 +59,7 @@ int main() {
         currenthp = a.return_mainhp();  
         if(currenthp < 0) break; 
 
-        usleep(1000000);
+        usleep(300000);
 
         cout<<"  -------------------\033[1m|  Inventory  |\033[0m--------------------- "<<endl;                    
         explore.cleanDisplay();

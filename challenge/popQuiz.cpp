@@ -1,12 +1,11 @@
-#include <iostream>
-#include <cctype>
+
 #include "challenge.h"
 using namespace std;
 
 void popQuiz::getInput(){
     cout<<" \033[4mAnswer\033[0m: \033[35m";
     cin>>input;
-    input = tolower(input);
+    transform(input.begin(), input.end(), input.begin(), ::tolower);
     cout<<"\033[0m";
 }
 
@@ -18,7 +17,7 @@ bool popQuiz::quiz1(){
     cout<<"  \033[35md.)\033[0m Golden Prof. Tanasanee Phienthrakul"<<endl;
     getInput();
 
-    if(input=='a' || input=='b' || input=='c'|| input=='d'){
+    if(input=="a" || input=="b" || input=="c"|| input=="d"){
         ans = true;
         cout<<endl<<" \033[32mOf course! They're all real!\033[0m"<<endl;
     }
@@ -37,11 +36,11 @@ bool popQuiz::quiz2(){
     cout<<"\033[35md\033[0m.) 19"<<endl;
     getInput();
 
-    if(input=='b'){
+    if(input=="b"){
         ans = true;
         cout<<endl<<" \033[32mYou're correct!\033[0m Thanks for the excuse of putting "<<endl<<" SDGs 4: Education in our objective. \033[31mXOXO\033[0m"<<endl;
     }
-    else if(input=='a' || input=='c'|| input=='d'){
+    else if(input=="a" || input=="c"|| input=="d"){
         ans = false;
         cout<<endl<<" OMG. Didn't you take \033[1mMUGE100\033[0m class? You can't mess this up!"<<endl;
     }
@@ -55,7 +54,7 @@ bool popQuiz::quiz3(){
     cout<<"\033[35mb.)\033[0m Prof. Mingmanas Sivaraksa"<<endl;
     getInput();
     
-    if(input=='a' || input=='b'){
+    if(input=="a" || input=="b"){
         ans = false;
         cout<<endl<<" How could you?! We all know they're both awesome!"<<endl;
     }
@@ -72,19 +71,19 @@ bool popQuiz::quiz4(){
     cout<<"\033[35mb.)\033[0m Reduce the global population."<<endl;
     cout<<"\033[35mc.)\033[0m Doing nothing and waiting for others to take action."<<endl;
     getInput();
-    if(input=='b'){
+    if(input=="b"){
         ans = false;
         cout<<endl<<" PLEASE DON'T DO THAT!"<<endl; 
 	    cout<<" Reducing the global population does not solve the issue \n of global warming"<<endl;
         cout<<" if humans continue the same behaviors that cause it."<<endl;
     }
-    else if(input=='c'){
+    else if(input=="c"){
         ans = false;
         cout<<endl<<"  NO YOU CAN DO SOMETHING!"<<endl; 
 	    cout<<" There are various ways we can address this issue ourselves"<<endl;
         cout<<" including advocating for solutions at the root cause."<<endl;
     }
-    else if(input=='a'){
+    else if(input=="a"){
         cout<<endl<<" CORRECT! "<<endl;
 	    cout<<" Using clean energy can help reduce pollutants released into\n the environment";
         cout<<" and decrease the usage of resources that contribute to global\n warming."<<endl;
@@ -99,13 +98,13 @@ bool popQuiz::quiz5(){
     cout<<"\033[35mb.)\033[0m Biomass Energy"<<endl;
     cout<<"\033[35mc.)\033[0m Coal"<<endl;
     getInput();
-    if(input =='a' || input=='b'){
+    if(input =="a" || input=="b"){
         ans = false;
         cout<<endl<<" NO! "<<endl; 
 	    cout<<" It is energy produced from the decomposition of biomass"<<endl;
         cout<<" which does not produce pollutants."<<endl;
     }
-    else if(input=='c'){
+    else if(input=="c"){
         cout<<endl<<" CORRECT! "<<endl;
 	    cout<<" Coal is directly impacts the Earth's environment and atmosphere."<<endl;
         ans = true;
@@ -119,19 +118,19 @@ bool popQuiz::quiz6(){
     cout<<"\033[35mb.)\033[0m Not releasing alien species into our local area."<<endl;
     cout<<"\033[35mc.)\033[0m Traveling without considering the creature beings in that\n ecosystem."<<endl;
     getInput();
-    if(input=='a'){
+    if(input=="a"){
         ans = false;
         cout<<endl<<" PLEASE DONT! "<<endl; 
 	    cout<<" Trading wild animals is illegal. But you can consider \n exotic pets";
         cout<<" such as hedgehog or sugar glider."<<endl;
     }
-    else if(input=='c'){
+    else if(input=="c"){
         ans = false;
         cout<<endl<<" WRONG! "<<endl; 
 	    cout<<"When visiting nature, you should not destroy"<<endl;
         cout<<"or disturb the living beings in that area."<<endl;
     }
-    else if(input=='b'){
+    else if(input=="b"){
         cout<<endl<<" CORRECT! "<<endl;
 	    cout<<"Releasing alien species into local areas"<<endl;
         cout<<"can cause various damages to the ecosystem in that area."<<endl;

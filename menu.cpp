@@ -43,7 +43,7 @@ string* menu::getArr(){
 void menu::mainmenu(){
 	cout<<"==========================================================="<<endl<<endl<<endl;
 	cout<<"                   \033[1;37m C L E A N  C R A F T\033[0m"<<endl<<endl<<endl;
-	cout<<"               \" Press any key to to enter \""<<endl<<endl<<endl;
+	cout<<"            \" Press Enter to continue . . . \""<<endl<<endl<<endl;
 	cout<<"      \033[1;31m⚘   \033[1;33m⚘   \033[1;36m⚘   \033[1;34m⚘                     \033[1;31m⚘   \033[1;33m⚘   \033[1;36m⚘   \033[1;34m⚘\033[0m"<<endl<<endl;
 	cout<<"==========================================================="<<endl<<endl;
 	cin.ignore(100, '\n');
@@ -92,24 +92,24 @@ int menu::return_mainhp(){
 }
 
 void menu::gameexit(event &e){
-	if(return_bsthp()<0){
+	if(return_bsthp()<1){
 	cout<<endl<<"==========================================================="<<endl;
 	cout<<endl<<"                       \033[1mZero Hearts\033[0m"<<endl;
 	cout<<endl<<"       You Failed to build up your Sustainable City."<<endl;
 	cout<<endl<<"                       \" TOO BAD \""<<endl;
 	}
-	else if(return_flag()>15){
+	else if(return_flag()>14){
 	cout<<endl<<"==========================================================="<<endl;
 	cout<<endl<<"                      \033[1mCONGRATULATIONS\033[0m"<<endl;
 	cout<<endl<<"       You successfully built your Sustainable City."<<endl;
-	cout<<endl<<"                      \" GREAT JOB \""<<endl;	
+	cout<<endl<<"                      \" GOOD JOB \""<<endl;	
 	}
 	else{
 	cout<<endl<<"==========================================================="<<endl;
 	cout<<endl<<"                    \033[1mPLEASE DON'T GO ...\033[0m"<<endl;
 	cout<<endl<<"                   You decided to leave.";
 	cout<<endl<<"                 \" JUST LIKE MY PARENTS \"";		
-	cout<<endl<<"                   - Someone, probably"<<endl;
+	cout<<endl<<"                   - Someone, probably."<<endl;
 	}
 	e.sustainrate();
 	cout<<endl<<"-----------------------------------------------------------"<<endl;
@@ -148,6 +148,8 @@ int menu::loopmenu(int k, int result, DoublyLinkedList &L,int turn, event &exp){
 		transform(temp.begin(), temp.end(), temp.begin(), ::toupper);
         if (temp == select1) {
             found = true;
+			cin.ignore(' ','\n');
+			cin.clear();
             return i;
         }
     }
@@ -164,6 +166,7 @@ void menu::callDisaster(){
 	{
 		case 1:
 			if (array[1] == "Water"){
+				cout<<"  -------------------\033[1m|  Inventory  |\033[0m--------------------- "<<endl;
 				elementDisplay(17);
 				Fire.description();
 				Fire.getInput();
@@ -174,6 +177,7 @@ void menu::callDisaster(){
 			break;
 		case 2:
 			if (array[5] == "Trees"){
+				cout<<"  -------------------\033[1m|  Inventory  |\033[0m--------------------- "<<endl;
 				elementDisplay(17);
 				Land.description();
 				Land.getInput();
@@ -184,6 +188,7 @@ void menu::callDisaster(){
 			break;
 		case 3:
 			if (array[14] == "People"){
+				cout<<"  -------------------\033[1m|  Inventory  |\033[0m--------------------- "<<endl;
 				elementDisplay(17);
 				People.description();
 				People.getInput();
@@ -200,8 +205,6 @@ void menu::callDisaster(){
 	if(!t){
 		damage();
 	} if(n<=3) showHP();
-	cin.ignore(100, '\n');
-	cin.get();
 	system("clear");
 }
 

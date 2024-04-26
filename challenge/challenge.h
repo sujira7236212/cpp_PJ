@@ -6,6 +6,7 @@
 #include <stack>
 #include <string>
 #include <algorithm>
+#include <cctype>
 
 
 class challenge: public BST{
@@ -17,7 +18,7 @@ class challenge: public BST{
 };
 
 class popQuiz : public challenge{
-        char input;
+        string input;
         bool ans = false;
     public:
         void getInput();
